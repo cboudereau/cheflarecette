@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="pdf2htmlEX"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<style type="text/css">
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}</style>
+<style type="text/css">
+/*! 
+ * Fancy styles for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */@keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes swing{0%{transform:rotate(0deg)}10%{transform:rotate(0deg)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}@-webkit-keyframes swing{0%{-webkit-transform:rotate(0deg)}10%{-webkit-transform:rotate(0deg)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}@media screen{#sidebar{background-color:#2f3236;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+")}#outline{font-family:Georgia,Times,"Times New Roman",serif;font-size:13px;margin:2em 1em}#outline ul{padding:0}#outline li{list-style-type:none;margin:1em 0}#outline li>ul{margin-left:1em}#outline a,#outline a:visited,#outline a:hover,#outline a:active{line-height:1.2;color:#e8e8e8;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block;overflow:hidden;outline:0}#outline a:hover{color:#0cf}#page-container{background-color:#9e9e9e;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");-webkit-transition:left 500ms;transition:left 500ms}.pf{margin:13px auto;box-shadow:1px 1px 3px 1px #333;border-collapse:separate}.pc.opened{-webkit-animation:fadein 100ms;animation:fadein 100ms}.loading-indicator.active{-webkit-animation:swing 1.5s ease-in-out .01s infinite alternate none;animation:swing 1.5s ease-in-out .01s infinite alternate none}.checked{background:no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goQDSYgDiGofgAAAslJREFUOMvtlM9LFGEYx7/vvOPM6ywuuyPFihWFBUsdNnA6KLIh+QPx4KWExULdHQ/9A9EfUodYmATDYg/iRewQzklFWxcEBcGgEplDkDtI6sw4PzrIbrOuedBb9MALD7zv+3m+z4/3Bf7bZS2bzQIAcrmcMDExcTeXy10DAFVVAQDksgFUVZ1ljD3yfd+0LOuFpmnvVVW9GHhkZAQcxwkNDQ2FSCQyRMgJxnVdy7KstKZpn7nwha6urqqfTqfPBAJAuVymlNLXoigOhfd5nmeiKL5TVTV+lmIKwAOA7u5u6Lped2BsbOwjY6yf4zgQQkAIAcedaPR9H67r3uYBQFEUFItFtLe332lpaVkUBOHK3t5eRtf1DwAwODiIubk5DA8PM8bYW1EU+wEgCIJqsCAIQAiB7/u253k2BQDDMJBKpa4mEon5eDx+UxAESJL0uK2t7XosFlvSdf0QAEmlUnlRFJ9Waho2Qghc1/U9z3uWz+eX+Wr+lL6SZfleEAQIggA8z6OpqSknimIvYyybSCReMsZ6TislhCAIAti2Dc/zejVNWwCAavN8339j27YbTg0AGGM3WltbP4WhlRWq6Q/btrs1TVsYHx+vNgqKoqBUKn2NRqPFxsbGJzzP05puUlpt0ukyOI6z7zjOwNTU1OLo6CgmJyf/gA3DgKIoWF1d/cIY24/FYgOU0pp0z/Ityzo8Pj5OTk9PbwHA+vp6zWghDC+VSiuRSOQgGo32UErJ38CO42wdHR09LBQK3zKZDDY2NupmFmF4R0cHVlZWlmRZ/iVJUn9FeWWcCCE4ODjYtG27Z2Zm5juAOmgdGAB2d3cBADs7O8uSJN2SZfl+WKlpmpumaT6Yn58vn/fs6XmbhmHMNjc3tzDGFI7jYJrm5vb29sDa2trPC/9aiqJUy5pOp4f6+vqeJ5PJBAB0dnZe/t8NBajx/z37Df5OGX8d13xzAAAAAElFTkSuQmCC)}}</style>
+<style type="text/css">
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.249000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.249000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.215000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.210000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff5;src:url(f5.woff)format("woff");}.ff5{font-family:ff5;line-height:0.860352;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff6;src:url(f6.woff)format("woff");}.ff6{font-family:ff6;line-height:0.740723;font-style:normal;font-weight:normal;visibility:visible;}
+.m1{transform:matrix(0.244537,0.000000,-0.051977,0.244537,0,0);-ms-transform:matrix(0.244537,0.000000,-0.051977,0.244537,0,0);-webkit-transform:matrix(0.244537,0.000000,-0.051977,0.244537,0,0);}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.lsd{letter-spacing:-3.016000px;}
+.ls9{letter-spacing:-1.329042px;}
+.lsc{letter-spacing:-0.956910px;}
+.lse{letter-spacing:-0.312000px;}
+.ls1{letter-spacing:0.000000px;}
+.ls8{letter-spacing:0.468000px;}
+.ls0{letter-spacing:0.480000px;}
+.ls3{letter-spacing:0.520000px;}
+.lsb{letter-spacing:0.531617px;}
+.ls6{letter-spacing:0.637940px;}
+.ls15{letter-spacing:0.676000px;}
+.ls7{letter-spacing:0.728000px;}
+.ls5{letter-spacing:0.744264px;}
+.ls4{letter-spacing:0.780000px;}
+.lsf{letter-spacing:0.832000px;}
+.ls14{letter-spacing:0.884000px;}
+.ls12{letter-spacing:1.792000px;}
+.ls11{letter-spacing:2.240000px;}
+.lsa{letter-spacing:2.912000px;}
+.ls10{letter-spacing:3.024000px;}
+.ls13{letter-spacing:3.136000px;}
+.ls2{letter-spacing:3.360000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws17{word-spacing:-0.780000px;}
+.ws14{word-spacing:-0.744264px;}
+.wsc{word-spacing:-0.728000px;}
+.ws11{word-spacing:-0.531617px;}
+.ws4{word-spacing:-0.520000px;}
+.ws0{word-spacing:-0.480000px;}
+.ws16{word-spacing:-0.364000px;}
+.wsf{word-spacing:-0.312000px;}
+.ws2{word-spacing:-0.260000px;}
+.ws3{word-spacing:-0.212647px;}
+.ws6{word-spacing:-0.208000px;}
+.ws18{word-spacing:-0.156000px;}
+.ws5{word-spacing:-0.106323px;}
+.ws1{word-spacing:0.000000px;}
+.ws7{word-spacing:0.052000px;}
+.ws15{word-spacing:0.224000px;}
+.ws10{word-spacing:0.336000px;}
+.ws9{word-spacing:0.448000px;}
+.wsd{word-spacing:0.520000px;}
+.wse{word-spacing:0.832000px;}
+.ws12{word-spacing:1.120000px;}
+.wsa{word-spacing:1.488527px;}
+.ws13{word-spacing:1.568000px;}
+.ws8{word-spacing:1.860659px;}
+.wsb{word-spacing:3.536000px;}
+._9{margin-left:-7.739200px;}
+._4{margin-left:-5.499200px;}
+._7{margin-left:-3.808000px;}
+._5{margin-left:-2.699200px;}
+._0{margin-left:-1.668800px;}
+._2{width:1.019200px;}
+._1{width:2.587200px;}
+._6{width:4.334400px;}
+._a{width:5.352400px;}
+._8{width:1616.205600px;}
+._3{width:1629.549600px;}
+.fc1{color:rgb(255,255,255);}
+.fc2{color:rgb(0,0,0);}
+.fc0{color:rgb(35,31,32);}
+.fs5{font-size:24.000000px;}
+.fs0{font-size:48.000000px;}
+.fs3{font-size:52.000000px;}
+.fs4{font-size:53.161682px;}
+.fs1{font-size:62.098000px;}
+.fs2{font-size:112.000000px;}
+.y0{bottom:0.000000px;}
+.y20{bottom:6.000100px;}
+.y1{bottom:14.149600px;}
+.y1f{bottom:55.001300px;}
+.y1d{bottom:55.709300px;}
+.y25{bottom:58.536000px;}
+.y55{bottom:58.541600px;}
+.y33{bottom:58.541700px;}
+.y1e{bottom:69.401300px;}
+.y1c{bottom:70.109300px;}
+.y65{bottom:70.726500px;}
+.y24{bottom:72.936000px;}
+.y54{bottom:72.941600px;}
+.y32{bottom:72.941700px;}
+.y64{bottom:90.720500px;}
+.y6b{bottom:99.254500px;}
+.y63{bottom:110.714500px;}
+.y6a{bottom:119.248500px;}
+.y45{bottom:130.726500px;}
+.y62{bottom:139.218500px;}
+.y5e{bottom:139.224500px;}
+.y4c{bottom:139.236500px;}
+.y61{bottom:139.242500px;}
+.y18{bottom:150.720500px;}
+.y5d{bottom:159.218500px;}
+.y4b{bottom:159.230500px;}
+.y60{bottom:159.236500px;}
+.y17{bottom:170.714500px;}
+.y4a{bottom:179.224500px;}
+.y50{bottom:179.230500px;}
+.y5c{bottom:187.722400px;}
+.y5b{bottom:187.728400px;}
+.y44{bottom:199.218500px;}
+.y16{bottom:199.224500px;}
+.y43{bottom:199.230500px;}
+.y5a{bottom:207.722400px;}
+.y15{bottom:219.218500px;}
+.y42{bottom:219.224500px;}
+.y4f{bottom:219.230500px;}
+.y14{bottom:219.236500px;}
+.y49{bottom:227.722400px;}
+.y48{bottom:227.740400px;}
+.y29{bottom:228.564000px;}
+.y59{bottom:228.569600px;}
+.ya{bottom:228.569700px;}
+.y41{bottom:239.218500px;}
+.y3b{bottom:239.224500px;}
+.y13{bottom:239.230500px;}
+.y28{bottom:242.964000px;}
+.y58{bottom:242.969600px;}
+.y9{bottom:242.969700px;}
+.y31{bottom:247.722400px;}
+.y47{bottom:247.734400px;}
+.y69{bottom:247.740400px;}
+.y3a{bottom:259.218500px;}
+.y12{bottom:259.224500px;}
+.y40{bottom:267.722400px;}
+.y30{bottom:267.728400px;}
+.y3f{bottom:267.734400px;}
+.y11{bottom:279.218500px;}
+.y2f{bottom:287.722400px;}
+.y39{bottom:287.728400px;}
+.y10{bottom:307.722400px;}
+.y38{bottom:307.728400px;}
+.y5f{bottom:307.734400px;}
+.y2e{bottom:316.232300px;}
+.y37{bottom:327.722400px;}
+.y36{bottom:327.728400px;}
+.yf{bottom:327.734400px;}
+.y2d{bottom:336.226300px;}
+.y3e{bottom:336.232300px;}
+.y2c{bottom:336.250300px;}
+.y35{bottom:347.722400px;}
+.ye{bottom:347.728400px;}
+.y3d{bottom:356.226300px;}
+.y4e{bottom:356.232300px;}
+.y68{bottom:356.238300px;}
+.y2b{bottom:356.244300px;}
+.yd{bottom:367.722400px;}
+.y34{bottom:376.226300px;}
+.y67{bottom:376.232300px;}
+.y2a{bottom:376.238300px;}
+.y4d{bottom:385.361700px;}
+.y53{bottom:385.601600px;}
+.y23{bottom:385.716000px;}
+.y66{bottom:396.226300px;}
+.yc{bottom:396.232300px;}
+.y27{bottom:399.756000px;}
+.y57{bottom:399.761600px;}
+.y6{bottom:399.761700px;}
+.y8{bottom:399.833700px;}
+.y52{bottom:400.001600px;}
+.y22{bottom:400.116000px;}
+.y26{bottom:414.156000px;}
+.y56{bottom:414.161600px;}
+.y5{bottom:414.161700px;}
+.y7{bottom:414.233700px;}
+.y51{bottom:414.401600px;}
+.y21{bottom:414.516000px;}
+.yb{bottom:416.226300px;}
+.y6f{bottom:482.132500px;}
+.y1b{bottom:482.141300px;}
+.y6e{bottom:519.728500px;}
+.y1a{bottom:519.737300px;}
+.y46{bottom:543.953300px;}
+.y6d{bottom:547.496500px;}
+.y19{bottom:558.353300px;}
+.y6c{bottom:561.896500px;}
+.y4{bottom:624.118800px;}
+.y2{bottom:648.906600px;}
+.y3{bottom:658.727200px;}
+.y3c{bottom:663.056200px;}
+.h9{height:17.648438px;}
+.ha{height:34.546875px;}
+.h6{height:44.256000px;}
+.h3{height:45.072000px;}
+.h7{height:47.944000px;}
+.h8{height:49.015070px;}
+.h4{height:58.310022px;}
+.h5{height:105.168000px;}
+.h2{height:708.661400px;}
+.h0{height:736.961000px;}
+.h1{height:737.000000px;}
+.w2{width:552.756400px;}
+.w1{width:581.000000px;}
+.w0{width:581.055000px;}
+.x0{left:0.000000px;}
+.x1{left:14.149600px;}
+.x17{left:38.322800px;}
+.x4a{left:61.629900px;}
+.x53{left:69.146900px;}
+.x14{left:70.783400px;}
+.x3a{left:74.133000px;}
+.x5d{left:76.202700px;}
+.xb{left:77.894500px;}
+.x41{left:79.142800px;}
+.x1f{left:81.165000px;}
+.x28{left:82.988400px;}
+.x39{left:85.113000px;}
+.x3f{left:86.246800px;}
+.x30{left:90.908800px;}
+.x5b{left:93.122700px;}
+.x1a{left:95.301000px;}
+.x19{left:99.657000px;}
+.x5{left:101.282500px;}
+.x4b{left:102.765900px;}
+.x24{left:104.648400px;}
+.x40{left:108.122800px;}
+.x6{left:109.562500px;}
+.x54{left:110.666900px;}
+.x4c{left:112.773900px;}
+.x25{left:115.736400px;}
+.x29{left:116.828400px;}
+.x4{left:119.097800px;}
+.x3e{left:127.551700px;}
+.x38{left:137.624300px;}
+.x18{left:143.054600px;}
+.x5a{left:147.591100px;}
+.x2f{left:152.142100px;}
+.x49{left:157.851000px;}
+.x27{left:199.232400px;}
+.x3b{left:202.821000px;}
+.x21{left:208.665000px;}
+.x16{left:209.839400px;}
+.x26{left:211.232400px;}
+.x1d{left:212.625000px;}
+.xa{left:213.638500px;}
+.x1c{left:217.413000px;}
+.x8{left:220.514500px;}
+.x5e{left:221.858700px;}
+.x9{left:225.530500px;}
+.x7{left:227.174500px;}
+.x20{left:229.089000px;}
+.x15{left:230.263400px;}
+.x32{left:231.728800px;}
+.x1b{left:233.901000px;}
+.x1e{left:238.305000px;}
+.x55{left:241.934900px;}
+.x5c{left:244.166700px;}
+.x33{left:245.216800px;}
+.x4d{left:247.293900px;}
+.x42{left:251.186800px;}
+.x31{left:252.740800px;}
+.x2{left:257.634500px;}
+.x2e{left:271.784100px;}
+.xc{left:340.692100px;}
+.xd{left:341.797100px;}
+.x2c{left:348.897100px;}
+.x56{left:364.429300px;}
+.x13{left:365.779400px;}
+.x5f{left:370.344300px;}
+.x2b{left:376.064100px;}
+.x4f{left:379.373900px;}
+.x50{left:386.133900px;}
+.x22{left:394.383700px;}
+.x57{left:398.060500px;}
+.x2d{left:411.580400px;}
+.xe{left:415.160100px;}
+.x36{left:416.174900px;}
+.x3d{left:419.719100px;}
+.x23{left:420.883900px;}
+.xf{left:421.920100px;}
+.x47{left:423.778900px;}
+.x58{left:426.952800px;}
+.x3c{left:428.205400px;}
+.x2a{left:435.802200px;}
+.x45{left:439.359100px;}
+.x37{left:441.007200px;}
+.x34{left:448.964900px;}
+.x60{left:450.649000px;}
+.x4e{left:452.213000px;}
+.x11{left:460.253600px;}
+.x10{left:463.795300px;}
+.x35{left:473.797300px;}
+.x59{left:476.343600px;}
+.x46{left:477.556700px;}
+.x52{left:485.028900px;}
+.x43{left:491.518300px;}
+.x12{left:498.470700px;}
+.x48{left:499.564900px;}
+.x3{left:500.869000px;}
+.x51{left:502.334100px;}
+.x44{left:514.148300px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.lsd{letter-spacing:-4.021333pt;}
+.ls9{letter-spacing:-1.772056pt;}
+.lsc{letter-spacing:-1.275880pt;}
+.lse{letter-spacing:-0.416000pt;}
+.ls1{letter-spacing:0.000000pt;}
+.ls8{letter-spacing:0.624000pt;}
+.ls0{letter-spacing:0.640000pt;}
+.ls3{letter-spacing:0.693333pt;}
+.lsb{letter-spacing:0.708822pt;}
+.ls6{letter-spacing:0.850587pt;}
+.ls15{letter-spacing:0.901333pt;}
+.ls7{letter-spacing:0.970667pt;}
+.ls5{letter-spacing:0.992351pt;}
+.ls4{letter-spacing:1.040000pt;}
+.lsf{letter-spacing:1.109333pt;}
+.ls14{letter-spacing:1.178667pt;}
+.ls12{letter-spacing:2.389333pt;}
+.ls11{letter-spacing:2.986667pt;}
+.lsa{letter-spacing:3.882667pt;}
+.ls10{letter-spacing:4.032000pt;}
+.ls13{letter-spacing:4.181333pt;}
+.ls2{letter-spacing:4.480000pt;}
+.ws17{word-spacing:-1.040000pt;}
+.ws14{word-spacing:-0.992351pt;}
+.wsc{word-spacing:-0.970667pt;}
+.ws11{word-spacing:-0.708822pt;}
+.ws4{word-spacing:-0.693333pt;}
+.ws0{word-spacing:-0.640000pt;}
+.ws16{word-spacing:-0.485333pt;}
+.wsf{word-spacing:-0.416000pt;}
+.ws2{word-spacing:-0.346667pt;}
+.ws3{word-spacing:-0.283529pt;}
+.ws6{word-spacing:-0.277333pt;}
+.ws18{word-spacing:-0.208000pt;}
+.ws5{word-spacing:-0.141764pt;}
+.ws1{word-spacing:0.000000pt;}
+.ws7{word-spacing:0.069333pt;}
+.ws15{word-spacing:0.298667pt;}
+.ws10{word-spacing:0.448000pt;}
+.ws9{word-spacing:0.597333pt;}
+.wsd{word-spacing:0.693333pt;}
+.wse{word-spacing:1.109333pt;}
+.ws12{word-spacing:1.493333pt;}
+.wsa{word-spacing:1.984703pt;}
+.ws13{word-spacing:2.090667pt;}
+.ws8{word-spacing:2.480878pt;}
+.wsb{word-spacing:4.714667pt;}
+._9{margin-left:-10.318933pt;}
+._4{margin-left:-7.332267pt;}
+._7{margin-left:-5.077333pt;}
+._5{margin-left:-3.598933pt;}
+._0{margin-left:-2.225067pt;}
+._2{width:1.358933pt;}
+._1{width:3.449600pt;}
+._6{width:5.779200pt;}
+._a{width:7.136533pt;}
+._8{width:2154.940800pt;}
+._3{width:2172.732800pt;}
+.fs5{font-size:32.000000pt;}
+.fs0{font-size:64.000000pt;}
+.fs3{font-size:69.333333pt;}
+.fs4{font-size:70.882242pt;}
+.fs1{font-size:82.797333pt;}
+.fs2{font-size:149.333333pt;}
+.y0{bottom:0.000000pt;}
+.y20{bottom:8.000133pt;}
+.y1{bottom:18.866133pt;}
+.y1f{bottom:73.335067pt;}
+.y1d{bottom:74.279067pt;}
+.y25{bottom:78.048000pt;}
+.y55{bottom:78.055467pt;}
+.y33{bottom:78.055600pt;}
+.y1e{bottom:92.535067pt;}
+.y1c{bottom:93.479067pt;}
+.y65{bottom:94.302000pt;}
+.y24{bottom:97.248000pt;}
+.y54{bottom:97.255467pt;}
+.y32{bottom:97.255600pt;}
+.y64{bottom:120.960667pt;}
+.y6b{bottom:132.339333pt;}
+.y63{bottom:147.619333pt;}
+.y6a{bottom:158.998000pt;}
+.y45{bottom:174.302000pt;}
+.y62{bottom:185.624667pt;}
+.y5e{bottom:185.632667pt;}
+.y4c{bottom:185.648667pt;}
+.y61{bottom:185.656667pt;}
+.y18{bottom:200.960667pt;}
+.y5d{bottom:212.291333pt;}
+.y4b{bottom:212.307333pt;}
+.y60{bottom:212.315333pt;}
+.y17{bottom:227.619333pt;}
+.y4a{bottom:238.966000pt;}
+.y50{bottom:238.974000pt;}
+.y5c{bottom:250.296533pt;}
+.y5b{bottom:250.304533pt;}
+.y44{bottom:265.624667pt;}
+.y16{bottom:265.632667pt;}
+.y43{bottom:265.640667pt;}
+.y5a{bottom:276.963200pt;}
+.y15{bottom:292.291333pt;}
+.y42{bottom:292.299333pt;}
+.y4f{bottom:292.307333pt;}
+.y14{bottom:292.315333pt;}
+.y49{bottom:303.629867pt;}
+.y48{bottom:303.653867pt;}
+.y29{bottom:304.752000pt;}
+.y59{bottom:304.759467pt;}
+.ya{bottom:304.759600pt;}
+.y41{bottom:318.958000pt;}
+.y3b{bottom:318.966000pt;}
+.y13{bottom:318.974000pt;}
+.y28{bottom:323.952000pt;}
+.y58{bottom:323.959467pt;}
+.y9{bottom:323.959600pt;}
+.y31{bottom:330.296533pt;}
+.y47{bottom:330.312533pt;}
+.y69{bottom:330.320533pt;}
+.y3a{bottom:345.624667pt;}
+.y12{bottom:345.632667pt;}
+.y40{bottom:356.963200pt;}
+.y30{bottom:356.971200pt;}
+.y3f{bottom:356.979200pt;}
+.y11{bottom:372.291333pt;}
+.y2f{bottom:383.629867pt;}
+.y39{bottom:383.637867pt;}
+.y10{bottom:410.296533pt;}
+.y38{bottom:410.304533pt;}
+.y5f{bottom:410.312533pt;}
+.y2e{bottom:421.643067pt;}
+.y37{bottom:436.963200pt;}
+.y36{bottom:436.971200pt;}
+.yf{bottom:436.979200pt;}
+.y2d{bottom:448.301733pt;}
+.y3e{bottom:448.309733pt;}
+.y2c{bottom:448.333733pt;}
+.y35{bottom:463.629867pt;}
+.ye{bottom:463.637867pt;}
+.y3d{bottom:474.968400pt;}
+.y4e{bottom:474.976400pt;}
+.y68{bottom:474.984400pt;}
+.y2b{bottom:474.992400pt;}
+.yd{bottom:490.296533pt;}
+.y34{bottom:501.635067pt;}
+.y67{bottom:501.643067pt;}
+.y2a{bottom:501.651067pt;}
+.y4d{bottom:513.815600pt;}
+.y53{bottom:514.135467pt;}
+.y23{bottom:514.288000pt;}
+.y66{bottom:528.301733pt;}
+.yc{bottom:528.309733pt;}
+.y27{bottom:533.008000pt;}
+.y57{bottom:533.015467pt;}
+.y6{bottom:533.015600pt;}
+.y8{bottom:533.111600pt;}
+.y52{bottom:533.335467pt;}
+.y22{bottom:533.488000pt;}
+.y26{bottom:552.208000pt;}
+.y56{bottom:552.215467pt;}
+.y5{bottom:552.215600pt;}
+.y7{bottom:552.311600pt;}
+.y51{bottom:552.535467pt;}
+.y21{bottom:552.688000pt;}
+.yb{bottom:554.968400pt;}
+.y6f{bottom:642.843333pt;}
+.y1b{bottom:642.855067pt;}
+.y6e{bottom:692.971333pt;}
+.y1a{bottom:692.983067pt;}
+.y46{bottom:725.271067pt;}
+.y6d{bottom:729.995333pt;}
+.y19{bottom:744.471067pt;}
+.y6c{bottom:749.195333pt;}
+.y4{bottom:832.158400pt;}
+.y2{bottom:865.208800pt;}
+.y3{bottom:878.302933pt;}
+.y3c{bottom:884.074933pt;}
+.h9{height:23.531250pt;}
+.ha{height:46.062500pt;}
+.h6{height:59.008000pt;}
+.h3{height:60.096000pt;}
+.h7{height:63.925333pt;}
+.h8{height:65.353427pt;}
+.h4{height:77.746696pt;}
+.h5{height:140.224000pt;}
+.h2{height:944.881867pt;}
+.h0{height:982.614667pt;}
+.h1{height:982.666667pt;}
+.w2{width:737.008533pt;}
+.w1{width:774.666667pt;}
+.w0{width:774.740000pt;}
+.x0{left:0.000000pt;}
+.x1{left:18.866133pt;}
+.x17{left:51.097067pt;}
+.x4a{left:82.173200pt;}
+.x53{left:92.195867pt;}
+.x14{left:94.377867pt;}
+.x3a{left:98.844000pt;}
+.x5d{left:101.603600pt;}
+.xb{left:103.859333pt;}
+.x41{left:105.523733pt;}
+.x1f{left:108.220000pt;}
+.x28{left:110.651200pt;}
+.x39{left:113.484000pt;}
+.x3f{left:114.995733pt;}
+.x30{left:121.211733pt;}
+.x5b{left:124.163600pt;}
+.x1a{left:127.068000pt;}
+.x19{left:132.876000pt;}
+.x5{left:135.043333pt;}
+.x4b{left:137.021200pt;}
+.x24{left:139.531200pt;}
+.x40{left:144.163733pt;}
+.x6{left:146.083333pt;}
+.x54{left:147.555867pt;}
+.x4c{left:150.365200pt;}
+.x25{left:154.315200pt;}
+.x29{left:155.771200pt;}
+.x4{left:158.797067pt;}
+.x3e{left:170.068933pt;}
+.x38{left:183.499067pt;}
+.x18{left:190.739467pt;}
+.x5a{left:196.788133pt;}
+.x2f{left:202.856133pt;}
+.x49{left:210.468000pt;}
+.x27{left:265.643200pt;}
+.x3b{left:270.428000pt;}
+.x21{left:278.220000pt;}
+.x16{left:279.785867pt;}
+.x26{left:281.643200pt;}
+.x1d{left:283.500000pt;}
+.xa{left:284.851333pt;}
+.x1c{left:289.884000pt;}
+.x8{left:294.019333pt;}
+.x5e{left:295.811600pt;}
+.x9{left:300.707333pt;}
+.x7{left:302.899333pt;}
+.x20{left:305.452000pt;}
+.x15{left:307.017867pt;}
+.x32{left:308.971733pt;}
+.x1b{left:311.868000pt;}
+.x1e{left:317.740000pt;}
+.x55{left:322.579867pt;}
+.x5c{left:325.555600pt;}
+.x33{left:326.955733pt;}
+.x4d{left:329.725200pt;}
+.x42{left:334.915733pt;}
+.x31{left:336.987733pt;}
+.x2{left:343.512667pt;}
+.x2e{left:362.378800pt;}
+.xc{left:454.256133pt;}
+.xd{left:455.729467pt;}
+.x2c{left:465.196133pt;}
+.x56{left:485.905733pt;}
+.x13{left:487.705867pt;}
+.x5f{left:493.792400pt;}
+.x2b{left:501.418800pt;}
+.x4f{left:505.831867pt;}
+.x50{left:514.845200pt;}
+.x22{left:525.844933pt;}
+.x57{left:530.747333pt;}
+.x2d{left:548.773867pt;}
+.xe{left:553.546800pt;}
+.x36{left:554.899867pt;}
+.x3d{left:559.625467pt;}
+.x23{left:561.178533pt;}
+.xf{left:562.560133pt;}
+.x47{left:565.038533pt;}
+.x58{left:569.270400pt;}
+.x3c{left:570.940533pt;}
+.x2a{left:581.069600pt;}
+.x45{left:585.812133pt;}
+.x37{left:588.009600pt;}
+.x34{left:598.619867pt;}
+.x60{left:600.865333pt;}
+.x4e{left:602.950667pt;}
+.x11{left:613.671467pt;}
+.x10{left:618.393733pt;}
+.x35{left:631.729733pt;}
+.x59{left:635.124800pt;}
+.x46{left:636.742267pt;}
+.x52{left:646.705200pt;}
+.x43{left:655.357733pt;}
+.x12{left:664.627600pt;}
+.x48{left:666.086533pt;}
+.x3{left:667.825333pt;}
+.x51{left:669.778800pt;}
+.x44{left:685.531067pt;}
+}
+</style>
+<script>
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* globals VBArray, PDFJS */
+
+'use strict';
+
+// Initializing PDFJS global object here, it case if we need to change/disable
+// some PDF.js features, e.g. range requests
+if (typeof PDFJS === 'undefined') {
+  (typeof window !== 'undefined' ? window : this).PDFJS = {};
+}
+
+// Checking if the typed arrays are supported
+// Support: iOS<6.0 (subarray), IE<10, Android<4.0
+(function checkTypedArrayCompatibility() {
+  if (typeof Uint8Array !== 'undefined') {
+    // Support: iOS<6.0
+    if (typeof Uint8Array.prototype.subarray === 'undefined') {
+        Uint8Array.prototype.subarray = function subarray(start, end) {
+          return new Uint8Array(this.slice(start, end));
+        };
+        Float32Array.prototype.subarray = function subarray(start, end) {
+          return new Float32Array(this.slice(start, end));
+        };
+    }
+
+    // Support: Android<4.1
+    if (typeof Float64Array === 'undefined') {
+      window.Float64Array = Float32Array;
+    }
+    return;
+  }
+
+  function subarray(start, end) {
+    return new TypedArray(this.slice(start, end));
+  }
+
+  function setArrayOffset(array, offset) {
+    if (arguments.length < 2) {
+      offset = 0;
+    }
+    for (var i = 0, n = array.length; i < n; ++i, ++offset) {
+      this[offset] = array[i] & 0xFF;
+    }
+  }
+
+  function TypedArray(arg1) {
+    var result, i, n;
+    if (typeof arg1 === 'number') {
+      result = [];
+      for (i = 0; i < arg1; ++i) {
+        result[i] = 0;
+      }
+    } else if ('slice' in arg1) {
+      result = arg1.slice(0);
+    } else {
+      result = [];
+      for (i = 0, n = arg1.length; i < n; ++i) {
+        result[i] = arg1[i];
+      }
+    }
+
+    result.subarray = subarray;
+    result.buffer = result;
+    result.byteLength = result.length;
+    result.set = setArrayOffset;
+
+    if (typeof arg1 === 'object' && arg1.buffer) {
+      result.buffer = arg1.buffer;
+    }
+    return result;
+  }
+
+  window.Uint8Array = TypedArray;
+  window.Int8Array = TypedArray;
+
+  // we don't need support for set, byteLength for 32-bit array
+  // so we can use the TypedArray as well
+  window.Uint32Array = TypedArray;
+  window.Int32Array = TypedArray;
+  window.Uint16Array = TypedArray;
+  window.Float32Array = TypedArray;
+  window.Float64Array = TypedArray;
+})();
+
+// URL = URL || webkitURL
+// Support: Safari<7, Android 4.2+
+(function normalizeURLObject() {
+  if (!window.URL) {
+    window.URL = window.webkitURL;
+  }
+})();
+
+// Object.defineProperty()?
+// Support: Android<4.0, Safari<5.1
+(function checkObjectDefinePropertyCompatibility() {
+  if (typeof Object.defineProperty !== 'undefined') {
+    var definePropertyPossible = true;
+    try {
+      // some browsers (e.g. safari) cannot use defineProperty() on DOM objects
+      // and thus the native version is not sufficient
+      Object.defineProperty(new Image(), 'id', { value: 'test' });
+      // ... another test for android gb browser for non-DOM objects
+      var Test = function Test() {};
+      Test.prototype = { get id() { } };
+      Object.defineProperty(new Test(), 'id',
+        { value: '', configurable: true, enumerable: true, writable: false });
+    } catch (e) {
+      definePropertyPossible = false;
+    }
+    if (definePropertyPossible) {
+      return;
+    }
+  }
+
+  Object.defineProperty = function objectDefineProperty(obj, name, def) {
+    delete obj[name];
+    if ('get' in def) {
+      obj.__defineGetter__(name, def['get']);
+    }
+    if ('set' in def) {
+      obj.__defineSetter__(name, def['set']);
+    }
+    if ('value' in def) {
+      obj.__defineSetter__(name, function objectDefinePropertySetter(value) {
+        this.__defineGetter__(name, function objectDefinePropertyGetter() {
+          return value;
+        });
+        return value;
+      });
+      obj[name] = def.value;
+    }
+  };
+})();
+
+
+// No XMLHttpRequest#response?
+// Support: IE<11, Android <4.0
+(function checkXMLHttpRequestResponseCompatibility() {
+  var xhrPrototype = XMLHttpRequest.prototype;
+  var xhr = new XMLHttpRequest();
+  if (!('overrideMimeType' in xhr)) {
+    // IE10 might have response, but not overrideMimeType
+    // Support: IE10
+    Object.defineProperty(xhrPrototype, 'overrideMimeType', {
+      value: function xmlHttpRequestOverrideMimeType(mimeType) {}
+    });
+  }
+  if ('responseType' in xhr) {
+    return;
+  }
+
+  // The worker will be using XHR, so we can save time and disable worker.
+  PDFJS.disableWorker = true;
+
+  Object.defineProperty(xhrPrototype, 'responseType', {
+    get: function xmlHttpRequestGetResponseType() {
+      return this._responseType || 'text';
+    },
+    set: function xmlHttpRequestSetResponseType(value) {
+      if (value === 'text' || value === 'arraybuffer') {
+        this._responseType = value;
+        if (value === 'arraybuffer' &&
+            typeof this.overrideMimeType === 'function') {
+          this.overrideMimeType('text/plain; charset=x-user-defined');
+        }
+      }
+    }
+  });
+
+  // Support: IE9
+  if (typeof VBArray !== 'undefined') {
+    Object.defineProperty(xhrPrototype, 'response', {
+      get: function xmlHttpRequestResponseGet() {
+        if (this.responseType === 'arraybuffer') {
+          return new Uint8Array(new VBArray(this.responseBody).toArray());
+        } else {
+          return this.responseText;
+        }
+      }
+    });
+    return;
+  }
+
+  Object.defineProperty(xhrPrototype, 'response', {
+    get: function xmlHttpRequestResponseGet() {
+      if (this.responseType !== 'arraybuffer') {
+        return this.responseText;
+      }
+      var text = this.responseText;
+      var i, n = text.length;
+      var result = new Uint8Array(n);
+      for (i = 0; i < n; ++i) {
+        result[i] = text.charCodeAt(i) & 0xFF;
+      }
+      return result.buffer;
+    }
+  });
+})();
+
+// window.btoa (base64 encode function) ?
+// Support: IE<10
+(function checkWindowBtoaCompatibility() {
+  if ('btoa' in window) {
+    return;
+  }
+
+  var digits =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+  window.btoa = function windowBtoa(chars) {
+    var buffer = '';
+    var i, n;
+    for (i = 0, n = chars.length; i < n; i += 3) {
+      var b1 = chars.charCodeAt(i) & 0xFF;
+      var b2 = chars.charCodeAt(i + 1) & 0xFF;
+      var b3 = chars.charCodeAt(i + 2) & 0xFF;
+      var d1 = b1 >> 2, d2 = ((b1 & 3) << 4) | (b2 >> 4);
+      var d3 = i + 1 < n ? ((b2 & 0xF) << 2) | (b3 >> 6) : 64;
+      var d4 = i + 2 < n ? (b3 & 0x3F) : 64;
+      buffer += (digits.charAt(d1) + digits.charAt(d2) +
+                 digits.charAt(d3) + digits.charAt(d4));
+    }
+    return buffer;
+  };
+})();
+
+// window.atob (base64 encode function)?
+// Support: IE<10
+(function checkWindowAtobCompatibility() {
+  if ('atob' in window) {
+    return;
+  }
+
+  // https://github.com/davidchambers/Base64.js
+  var digits =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+  window.atob = function (input) {
+    input = input.replace(/=+$/, '');
+    if (input.length % 4 === 1) {
+      throw new Error('bad atob input');
+    }
+    for (
+      // initialize result and counters
+      var bc = 0, bs, buffer, idx = 0, output = '';
+      // get next character
+      buffer = input.charAt(idx++);
+      // character found in table?
+      // initialize bit storage and add its ascii value
+      ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+        // and if not first of each 4 characters,
+        // convert the first 8 bits to one ascii character
+        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+    ) {
+      // try to find character in table (0-63, not found => -1)
+      buffer = digits.indexOf(buffer);
+    }
+    return output;
+  };
+})();
+
+// Function.prototype.bind?
+// Support: Android<4.0, iOS<6.0
+(function checkFunctionPrototypeBindCompatibility() {
+  if (typeof Function.prototype.bind !== 'undefined') {
+    return;
+  }
+
+  Function.prototype.bind = function functionPrototypeBind(obj) {
+    var fn = this, headArgs = Array.prototype.slice.call(arguments, 1);
+    var bound = function functionPrototypeBindBound() {
+      var args = headArgs.concat(Array.prototype.slice.call(arguments));
+      return fn.apply(obj, args);
+    };
+    return bound;
+  };
+})();
+
+// HTMLElement dataset property
+// Support: IE<11, Safari<5.1, Android<4.0
+(function checkDatasetProperty() {
+  var div = document.createElement('div');
+  if ('dataset' in div) {
+    return; // dataset property exists
+  }
+
+  Object.defineProperty(HTMLElement.prototype, 'dataset', {
+    get: function() {
+      if (this._dataset) {
+        return this._dataset;
+      }
+
+      var dataset = {};
+      for (var j = 0, jj = this.attributes.length; j < jj; j++) {
+        var attribute = this.attributes[j];
+        if (attribute.name.substring(0, 5) !== 'data-') {
+          continue;
+        }
+        var key = attribute.name.substring(5).replace(/\-([a-z])/g,
+          function(all, ch) {
+            return ch.toUpperCase();
+          });
+        dataset[key] = attribute.value;
+      }
+
+      Object.defineProperty(this, '_dataset', {
+        value: dataset,
+        writable: false,
+        enumerable: false
+      });
+      return dataset;
+    },
+    enumerable: true
+  });
+})();
+
+// HTMLElement classList property
+// Support: IE<10, Android<4.0, iOS<5.0
+(function checkClassListProperty() {
+  var div = document.createElement('div');
+  if ('classList' in div) {
+    return; // classList property exists
+  }
+
+  function changeList(element, itemName, add, remove) {
+    var s = element.className || '';
+    var list = s.split(/\s+/g);
+    if (list[0] === '') {
+      list.shift();
+    }
+    var index = list.indexOf(itemName);
+    if (index < 0 && add) {
+      list.push(itemName);
+    }
+    if (index >= 0 && remove) {
+      list.splice(index, 1);
+    }
+    element.className = list.join(' ');
+    return (index >= 0);
+  }
+
+  var classListPrototype = {
+    add: function(name) {
+      changeList(this.element, name, true, false);
+    },
+    contains: function(name) {
+      return changeList(this.element, name, false, false);
+    },
+    remove: function(name) {
+      changeList(this.element, name, false, true);
+    },
+    toggle: function(name) {
+      changeList(this.element, name, true, true);
+    }
+  };
+
+  Object.defineProperty(HTMLElement.prototype, 'classList', {
+    get: function() {
+      if (this._classList) {
+        return this._classList;
+      }
+
+      var classList = Object.create(classListPrototype, {
+        element: {
+          value: this,
+          writable: false,
+          enumerable: true
+        }
+      });
+      Object.defineProperty(this, '_classList', {
+        value: classList,
+        writable: false,
+        enumerable: false
+      });
+      return classList;
+    },
+    enumerable: true
+  });
+})();
+
+// Check console compatibility
+// In older IE versions the console object is not available
+// unless console is open.
+// Support: IE<10
+(function checkConsoleCompatibility() {
+  if (!('console' in window)) {
+    window.console = {
+      log: function() {},
+      error: function() {},
+      warn: function() {}
+    };
+  } else if (!('bind' in console.log)) {
+    // native functions in IE9 might not have bind
+    console.log = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.log);
+    console.error = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.error);
+    console.warn = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.warn);
+  }
+})();
+
+// Check onclick compatibility in Opera
+// Support: Opera<15
+(function checkOnClickCompatibility() {
+  // workaround for reported Opera bug DSK-354448:
+  // onclick fires on disabled buttons with opaque content
+  function ignoreIfTargetDisabled(event) {
+    if (isDisabled(event.target)) {
+      event.stopPropagation();
+    }
+  }
+  function isDisabled(node) {
+    return node.disabled || (node.parentNode && isDisabled(node.parentNode));
+  }
+  if (navigator.userAgent.indexOf('Opera') !== -1) {
+    // use browser detection since we cannot feature-check this bug
+    document.addEventListener('click', ignoreIfTargetDisabled, true);
+  }
+})();
+
+// Checks if possible to use URL.createObjectURL()
+// Support: IE
+(function checkOnBlobSupport() {
+  // sometimes IE loosing the data created with createObjectURL(), see #3977
+  if (navigator.userAgent.indexOf('Trident') >= 0) {
+    PDFJS.disableCreateObjectURL = true;
+  }
+})();
+
+// Checks if navigator.language is supported
+(function checkNavigatorLanguage() {
+  if ('language' in navigator) {
+    return;
+  }
+  PDFJS.locale = navigator.userLanguage || 'en-US';
+})();
+
+(function checkRangeRequests() {
+  // Safari has issues with cached range requests see:
+  // https://github.com/mozilla/pdf.js/issues/3260
+  // Last tested with version 6.0.4.
+  // Support: Safari 6.0+
+  var isSafari = Object.prototype.toString.call(
+                  window.HTMLElement).indexOf('Constructor') > 0;
+
+  // Older versions of Android (pre 3.0) has issues with range requests, see:
+  // https://github.com/mozilla/pdf.js/issues/3381.
+  // Make sure that we only match webkit-based Android browsers,
+  // since Firefox/Fennec works as expected.
+  // Support: Android<3.0
+  var regex = /Android\s[0-2][^\d]/;
+  var isOldAndroid = regex.test(navigator.userAgent);
+
+  // Range requests are broken in Chrome 39 and 40, https://crbug.com/442318
+  var isChromeWithRangeBug = /Chrome\/(39|40)\./.test(navigator.userAgent);
+
+  if (isSafari || isOldAndroid || isChromeWithRangeBug) {
+    PDFJS.disableRange = true;
+    PDFJS.disableStream = true;
+  }
+})();
+
+// Check if the browser supports manipulation of the history.
+// Support: IE<10, Android<4.2
+(function checkHistoryManipulation() {
+  // Android 2.x has so buggy pushState support that it was removed in
+  // Android 3.0 and restored as late as in Android 4.2.
+  // Support: Android 2.x
+  if (!history.pushState || navigator.userAgent.indexOf('Android 2.') >= 0) {
+    PDFJS.disableHistory = true;
+  }
+})();
+
+// Support: IE<11, Chrome<21, Android<4.4, Safari<6
+(function checkSetPresenceInImageData() {
+  // IE < 11 will use window.CanvasPixelArray which lacks set function.
+  if (window.CanvasPixelArray) {
+    if (typeof window.CanvasPixelArray.prototype.set !== 'function') {
+      window.CanvasPixelArray.prototype.set = function(arr) {
+        for (var i = 0, ii = this.length; i < ii; i++) {
+          this[i] = arr[i];
+        }
+      };
+    }
+  } else {
+    // Old Chrome and Android use an inaccessible CanvasPixelArray prototype.
+    // Because we cannot feature detect it, we rely on user agent parsing.
+    var polyfill = false, versionMatch;
+    if (navigator.userAgent.indexOf('Chrom') >= 0) {
+      versionMatch = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+      // Chrome < 21 lacks the set function.
+      polyfill = versionMatch && parseInt(versionMatch[2]) < 21;
+    } else if (navigator.userAgent.indexOf('Android') >= 0) {
+      // Android < 4.4 lacks the set function.
+      // Android >= 4.4 will contain Chrome in the user agent,
+      // thus pass the Chrome check above and not reach this block.
+      polyfill = /Android\s[0-4][^\d]/g.test(navigator.userAgent);
+    } else if (navigator.userAgent.indexOf('Safari') >= 0) {
+      versionMatch = navigator.userAgent.
+        match(/Version\/([0-9]+)\.([0-9]+)\.([0-9]+) Safari\//);
+      // Safari < 6 lacks the set function.
+      polyfill = versionMatch && parseInt(versionMatch[1]) < 6;
+    }
+
+    if (polyfill) {
+      var contextPrototype = window.CanvasRenderingContext2D.prototype;
+      contextPrototype._createImageData = contextPrototype.createImageData;
+      contextPrototype.createImageData = function(w, h) {
+        var imageData = this._createImageData(w, h);
+        imageData.data.set = function(arr) {
+          for (var i = 0, ii = this.length; i < ii; i++) {
+            this[i] = arr[i];
+          }
+        };
+        return imageData;
+      };
+    }
+  }
+})();
+
+// Support: IE<10, Android<4.0, iOS
+(function checkRequestAnimationFrame() {
+  function fakeRequestAnimationFrame(callback) {
+    window.setTimeout(callback, 20);
+  }
+
+  var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+  if (isIOS) {
+    // requestAnimationFrame on iOS is broken, replacing with fake one.
+    window.requestAnimationFrame = fakeRequestAnimationFrame;
+    return;
+  }
+  if ('requestAnimationFrame' in window) {
+    return;
+  }
+  window.requestAnimationFrame =
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    fakeRequestAnimationFrame;
+})();
+
+(function checkCanvasSizeLimitation() {
+  var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+  var isAndroid = /Android/g.test(navigator.userAgent);
+  if (isIOS || isAndroid) {
+    // 5MP
+    PDFJS.maxCanvasPixels = 5242880;
+  }
+})();
+
+// Disable fullscreen support for certain problematic configurations.
+// Support: IE11+ (when embedded).
+(function checkFullscreenSupport() {
+  var isEmbeddedIE = (navigator.userAgent.indexOf('Trident') >= 0 &&
+                      window.parent !== window);
+  if (isEmbeddedIE) {
+    PDFJS.disableFullscreen = true;
+  }
+})();
+</script>
+<script>
+(function(){/*
+ pdf2htmlEX.js: Core UI functions for pdf2htmlEX 
+ Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> and other contributors 
+ https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE 
+*/
+var pdf2htmlEX=window.pdf2htmlEX=window.pdf2htmlEX||{},CSS_CLASS_NAMES={page_frame:"pf",page_content_box:"pc",page_data:"pi",background_image:"bi",link:"l",input_radio:"ir",__dummy__:"no comma"},DEFAULT_CONFIG={container_id:"page-container",sidebar_id:"sidebar",outline_id:"outline",loading_indicator_cls:"loading-indicator",preload_pages:3,render_timeout:100,scale_step:0.9,key_handler:!0,hashchange_handler:!0,view_history_handler:!0,__dummy__:"no comma"},EPS=1E-6;
+function invert(a){var b=a[0]*a[3]-a[1]*a[2];return[a[3]/b,-a[1]/b,-a[2]/b,a[0]/b,(a[2]*a[5]-a[3]*a[4])/b,(a[1]*a[4]-a[0]*a[5])/b]}function transform(a,b){return[a[0]*b[0]+a[2]*b[1]+a[4],a[1]*b[0]+a[3]*b[1]+a[5]]}function get_page_number(a){return parseInt(a.getAttribute("data-page-no"),16)}function disable_dragstart(a){for(var b=0,c=a.length;b<c;++b)a[b].addEventListener("dragstart",function(){return!1},!1)}
+function clone_and_extend_objs(a){for(var b={},c=0,e=arguments.length;c<e;++c){var h=arguments[c],d;for(d in h)h.hasOwnProperty(d)&&(b[d]=h[d])}return b}
+function Page(a){if(a){this.shown=this.loaded=!1;this.page=a;this.num=get_page_number(a);this.original_height=a.clientHeight;this.original_width=a.clientWidth;var b=a.getElementsByClassName(CSS_CLASS_NAMES.page_content_box)[0];b&&(this.content_box=b,this.original_scale=this.cur_scale=this.original_height/b.clientHeight,this.page_data=JSON.parse(a.getElementsByClassName(CSS_CLASS_NAMES.page_data)[0].getAttribute("data-data")),this.ctm=this.page_data.ctm,this.ictm=invert(this.ctm),this.loaded=!0)}}
+Page.prototype={hide:function(){this.loaded&&this.shown&&(this.content_box.classList.remove("opened"),this.shown=!1)},show:function(){this.loaded&&!this.shown&&(this.content_box.classList.add("opened"),this.shown=!0)},rescale:function(a){this.cur_scale=0===a?this.original_scale:a;this.loaded&&(a=this.content_box.style,a.msTransform=a.webkitTransform=a.transform="scale("+this.cur_scale.toFixed(3)+")");a=this.page.style;a.height=this.original_height*this.cur_scale+"px";a.width=this.original_width*this.cur_scale+
+"px"},view_position:function(){var a=this.page,b=a.parentNode;return[b.scrollLeft-a.offsetLeft-a.clientLeft,b.scrollTop-a.offsetTop-a.clientTop]},height:function(){return this.page.clientHeight},width:function(){return this.page.clientWidth}};function Viewer(a){this.config=clone_and_extend_objs(DEFAULT_CONFIG,0<arguments.length?a:{});this.pages_loading=[];this.init_before_loading_content();var b=this;document.addEventListener("DOMContentLoaded",function(){b.init_after_loading_content()},!1)}
+Viewer.prototype={scale:1,cur_page_idx:0,first_page_idx:0,init_before_loading_content:function(){this.pre_hide_pages()},initialize_radio_button:function(){for(var a=document.getElementsByClassName(CSS_CLASS_NAMES.input_radio),b=0;b<a.length;b++)a[b].addEventListener("click",function(){this.classList.toggle("checked")})},init_after_loading_content:function(){this.sidebar=document.getElementById(this.config.sidebar_id);this.outline=document.getElementById(this.config.outline_id);this.container=document.getElementById(this.config.container_id);
+this.loading_indicator=document.getElementsByClassName(this.config.loading_indicator_cls)[0];for(var a=!0,b=this.outline.childNodes,c=0,e=b.length;c<e;++c)if("ul"===b[c].nodeName.toLowerCase()){a=!1;break}a||this.sidebar.classList.add("opened");this.find_pages();if(0!=this.pages.length){disable_dragstart(document.getElementsByClassName(CSS_CLASS_NAMES.background_image));this.config.key_handler&&this.register_key_handler();var h=this;this.config.hashchange_handler&&window.addEventListener("hashchange",
+function(a){h.navigate_to_dest(document.location.hash.substring(1))},!1);this.config.view_history_handler&&window.addEventListener("popstate",function(a){a.state&&h.navigate_to_dest(a.state)},!1);this.container.addEventListener("scroll",function(){h.update_page_idx();h.schedule_render(!0)},!1);[this.container,this.outline].forEach(function(a){a.addEventListener("click",h.link_handler.bind(h),!1)});this.initialize_radio_button();this.render()}},find_pages:function(){for(var a=[],b={},c=this.container.childNodes,
+e=0,h=c.length;e<h;++e){var d=c[e];d.nodeType===Node.ELEMENT_NODE&&d.classList.contains(CSS_CLASS_NAMES.page_frame)&&(d=new Page(d),a.push(d),b[d.num]=a.length-1)}this.pages=a;this.page_map=b},load_page:function(a,b,c){var e=this.pages;if(!(a>=e.length)&&(e=e[a],!e.loaded&&!this.pages_loading[a])){var e=e.page,h=e.getAttribute("data-page-url");if(h){this.pages_loading[a]=!0;var d=e.getElementsByClassName(this.config.loading_indicator_cls)[0];"undefined"===typeof d&&(d=this.loading_indicator.cloneNode(!0),
+d.classList.add("active"),e.appendChild(d));var f=this,g=new XMLHttpRequest;g.open("GET",h,!0);g.onload=function(){if(200===g.status||0===g.status){var b=document.createElement("div");b.innerHTML=g.responseText;for(var d=null,b=b.childNodes,e=0,h=b.length;e<h;++e){var p=b[e];if(p.nodeType===Node.ELEMENT_NODE&&p.classList.contains(CSS_CLASS_NAMES.page_frame)){d=p;break}}b=f.pages[a];f.container.replaceChild(d,b.page);b=new Page(d);f.pages[a]=b;b.hide();b.rescale(f.scale);disable_dragstart(d.getElementsByClassName(CSS_CLASS_NAMES.background_image));
+f.schedule_render(!1);c&&c(b)}delete f.pages_loading[a]};g.send(null)}void 0===b&&(b=this.config.preload_pages);0<--b&&(f=this,setTimeout(function(){f.load_page(a+1,b)},0))}},pre_hide_pages:function(){var a="@media screen{."+CSS_CLASS_NAMES.page_content_box+"{display:none;}}",b=document.createElement("style");b.styleSheet?b.styleSheet.cssText=a:b.appendChild(document.createTextNode(a));document.head.appendChild(b)},render:function(){for(var a=this.container,b=a.scrollTop,c=a.clientHeight,a=b-c,b=
+b+c+c,c=this.pages,e=0,h=c.length;e<h;++e){var d=c[e],f=d.page,g=f.offsetTop+f.clientTop,f=g+f.clientHeight;g<=b&&f>=a?d.loaded?d.show():this.load_page(e):d.hide()}},update_page_idx:function(){var a=this.pages,b=a.length;if(!(2>b)){for(var c=this.container,e=c.scrollTop,c=e+c.clientHeight,h=-1,d=b,f=d-h;1<f;){var g=h+Math.floor(f/2),f=a[g].page;f.offsetTop+f.clientTop+f.clientHeight>=e?d=g:h=g;f=d-h}this.first_page_idx=d;for(var g=h=this.cur_page_idx,k=0;d<b;++d){var f=a[d].page,l=f.offsetTop+f.clientTop,
+f=f.clientHeight;if(l>c)break;f=(Math.min(c,l+f)-Math.max(e,l))/f;if(d===h&&Math.abs(f-1)<=EPS){g=h;break}f>k&&(k=f,g=d)}this.cur_page_idx=g}},schedule_render:function(a){if(void 0!==this.render_timer){if(!a)return;clearTimeout(this.render_timer)}var b=this;this.render_timer=setTimeout(function(){delete b.render_timer;b.render()},this.config.render_timeout)},register_key_handler:function(){var a=this;window.addEventListener("DOMMouseScroll",function(b){if(b.ctrlKey){b.preventDefault();var c=a.container,
+e=c.getBoundingClientRect(),c=[b.clientX-e.left-c.clientLeft,b.clientY-e.top-c.clientTop];a.rescale(Math.pow(a.config.scale_step,b.detail),!0,c)}},!1);window.addEventListener("keydown",function(b){var c=!1,e=b.ctrlKey||b.metaKey,h=b.altKey;switch(b.keyCode){case 61:case 107:case 187:e&&(a.rescale(1/a.config.scale_step,!0),c=!0);break;case 173:case 109:case 189:e&&(a.rescale(a.config.scale_step,!0),c=!0);break;case 48:e&&(a.rescale(0,!1),c=!0);break;case 33:h?a.scroll_to(a.cur_page_idx-1):a.container.scrollTop-=
+a.container.clientHeight;c=!0;break;case 34:h?a.scroll_to(a.cur_page_idx+1):a.container.scrollTop+=a.container.clientHeight;c=!0;break;case 35:a.container.scrollTop=a.container.scrollHeight;c=!0;break;case 36:a.container.scrollTop=0,c=!0}c&&b.preventDefault()},!1)},rescale:function(a,b,c){var e=this.scale;this.scale=a=0===a?1:b?e*a:a;c||(c=[0,0]);b=this.container;c[0]+=b.scrollLeft;c[1]+=b.scrollTop;for(var h=this.pages,d=h.length,f=this.first_page_idx;f<d;++f){var g=h[f].page;if(g.offsetTop+g.clientTop>=
+c[1])break}g=f-1;0>g&&(g=0);var g=h[g].page,k=g.clientWidth,f=g.clientHeight,l=g.offsetLeft+g.clientLeft,m=c[0]-l;0>m?m=0:m>k&&(m=k);k=g.offsetTop+g.clientTop;c=c[1]-k;0>c?c=0:c>f&&(c=f);for(f=0;f<d;++f)h[f].rescale(a);b.scrollLeft+=m/e*a+g.offsetLeft+g.clientLeft-m-l;b.scrollTop+=c/e*a+g.offsetTop+g.clientTop-c-k;this.schedule_render(!0)},fit_width:function(){var a=this.cur_page_idx;this.rescale(this.container.clientWidth/this.pages[a].width(),!0);this.scroll_to(a)},fit_height:function(){var a=this.cur_page_idx;
+this.rescale(this.container.clientHeight/this.pages[a].height(),!0);this.scroll_to(a)},get_containing_page:function(a){for(;a;){if(a.nodeType===Node.ELEMENT_NODE&&a.classList.contains(CSS_CLASS_NAMES.page_frame)){a=get_page_number(a);var b=this.page_map;return a in b?this.pages[b[a]]:null}a=a.parentNode}return null},link_handler:function(a){var b=a.target,c=b.getAttribute("data-dest-detail");if(c){if(this.config.view_history_handler)try{var e=this.get_current_view_hash();window.history.replaceState(e,
+"","#"+e);window.history.pushState(c,"","#"+c)}catch(h){}this.navigate_to_dest(c,this.get_containing_page(b));a.preventDefault()}},navigate_to_dest:function(a,b){try{var c=JSON.parse(a)}catch(e){return}if(c instanceof Array){var h=c[0],d=this.page_map;if(h in d){for(var f=d[h],h=this.pages[f],d=2,g=c.length;d<g;++d){var k=c[d];if(!(null===k||"number"===typeof k))return}for(;6>c.length;)c.push(null);var g=b||this.pages[this.cur_page_idx],d=g.view_position(),d=transform(g.ictm,[d[0],g.height()-d[1]]),
+g=this.scale,l=[0,0],m=!0,k=!1,n=this.scale;switch(c[1]){case "XYZ":l=[null===c[2]?d[0]:c[2]*n,null===c[3]?d[1]:c[3]*n];g=c[4];if(null===g||0===g)g=this.scale;k=!0;break;case "Fit":case "FitB":l=[0,0];k=!0;break;case "FitH":case "FitBH":l=[0,null===c[2]?d[1]:c[2]*n];k=!0;break;case "FitV":case "FitBV":l=[null===c[2]?d[0]:c[2]*n,0];k=!0;break;case "FitR":l=[c[2]*n,c[5]*n],m=!1,k=!0}if(k){this.rescale(g,!1);var p=this,c=function(a){l=transform(a.ctm,l);m&&(l[1]=a.height()-l[1]);p.scroll_to(f,l)};h.loaded?
+c(h):(this.load_page(f,void 0,c),this.scroll_to(f))}}}},scroll_to:function(a,b){var c=this.pages;if(!(0>a||a>=c.length)){c=c[a].view_position();void 0===b&&(b=[0,0]);var e=this.container;e.scrollLeft+=b[0]-c[0];e.scrollTop+=b[1]-c[1]}},get_current_view_hash:function(){var a=[],b=this.pages[this.cur_page_idx];a.push(b.num);a.push("XYZ");var c=b.view_position(),c=transform(b.ictm,[c[0],b.height()-c[1]]);a.push(c[0]/this.scale);a.push(c[1]/this.scale);a.push(this.scale);return JSON.stringify(a)}};
+pdf2htmlEX.Viewer=Viewer;})();
+</script>
+<script>
+try{
+pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
+}catch(e){}
+</script>
+<title></title>
+</head>
+<body>
+<div id="sidebar">
+<div id="outline">
+</div>
+</div>
+<div id="page-container">
+<div id="pf5" class="pf w0 h0" data-page-no="5"><div class="pc pc5 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg5.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x3 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">1</div><div class="t m0 x4 h5 y4 ff2 fs2 fc0 sc0 ls2 ws1">HOU<span class="_ _0"></span>M<span class="_ _0"></span>OUS D<span class="_ _0"></span>E BUT<span class="_ _1"></span>TER<span class="_ _2"></span>NUT</div><div class="t m0 x5 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">butternut</div><div class="t m0 x6 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">400g</div><div class="t m0 x7 h6 y7 ff3 fs0 fc0 sc0 ls1 ws1">pois chiches</div><div class="t m0 x8 h6 y8 ff4 fs0 fc0 sc0 ls1 ws1">400g égouttés</div><div class="t m0 x9 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">sésame doré</div><div class="t m0 xa h6 ya ff4 fs0 fc0 sc0 ls1 ws1">2cuillerées à café</div><div class="t m0 x6 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">tahini</div><div class="t m0 xb h6 ya ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à soupe</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Peler la courge et<span class="_ _0"></span> </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls4 ws2">dét<span class="_ _0"></span>ailler en cubes<span class="_ _0"></span>.</div><div class="t m0 xc h7 yd ff3 fs3 fc0 sc0 ls3 ws1">Met<span class="_ _2"></span>tre 5<span class="_ _0"></span>0<span class="_ _2"></span>0g d’<span class="_ _0"></span>eau dans le </div><div class="t m0 xd h7 ye ff3 fs3 fc0 sc0 ls3 ws1">bol. C<span class="_ _0"></span>uire la co<span class="_ _0"></span>urge dans </div><div class="t m0 xd h7 yf ff3 fs3 fc0 sc0 ls3 ws1">le panie<span class="_ _2"></span>r 1<span class="_ _0"></span>5minutes en </div><div class="t m1 xd h8 y10 ff3 fs4 fc0 sc0 ls5 ws3">mode v<span class="_ _0"></span>apeur</div><div class="t m0 xe h7 y10 ff3 fs3 fc0 sc0 ls3 ws4">, </div><div class="t m1 xf h8 y10 ff3 fs4 fc0 sc0 ls6 ws5">vit<span class="_ _0"></span>. mini</div><div class="t m0 x10 h7 y10 ff3 fs3 fc0 sc0 ls1 ws1">.</div><div class="t m0 xc h7 y11 ff3 fs3 fc0 sc0 ls7 ws6">Réserver quelques feuilles de<span class="_ _0"></span> </div><div class="t m0 xd h7 y12 ff3 fs3 fc0 sc0 ls8 ws7">c<span class="_ _0"></span>or<span class="_ _2"></span>iandre. Mixer la cour<span class="_ _0"></span>ge </div><div class="t m0 xd h7 y13 ff3 fs3 fc0 sc0 ls3 ws1">dans le bol avec l<span class="_ _2"></span>es autres </div><div class="t m0 xd h7 y14 ff3 fs3 fc0 sc0 ls3 ws1">ingrédients 1minute, </div><div class="t m1 x11 h8 y15 ff3 fs4 fc0 sc0 ls9 ws8">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _1"></span> 3,<span class="_ _2"></span>5.</div><div class="t m0 x12 h7 y15 ff3 fs3 fc0 sc0 ls1 ws1"> </div><div class="t m0 xd h7 y16 ff3 fs3 fc0 sc0 ls3 ws1">Rectiﬁe<span class="_ _2"></span>r l’<span class="_ _0"></span>assaisonne<span class="_ _2"></span>ment<span class="_ _0"></span>.</div><div class="t m0 xc h7 y17 ff3 fs3 fc0 sc0 ls3 ws1">Ser<span class="_ _1"></span>vir en di<span class="_ _2"></span>p ou sur des toasts </div><div class="t m0 xd h7 y18 ff3 fs3 fc0 sc0 ls3 ws1">avec la coriandre r<span class="_ _0"></span>estante.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 5minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">20minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 1 bol</div><div class="t m0 x14 h6 y1c ff3 fs0 fc0 sc0 ls1 ws1">feuilles de coriandre</div><div class="t m0 x14 h6 y1d ff4 fs0 fc0 sc0 ls1 ws1">4cuillerées à soupe</div><div class="t m0 x15 h6 y1e ff3 fs0 fc0 sc0 ls1 ws1">huile d’olive</div><div class="t m0 x16 h6 y1f ff4 fs0 fc0 sc0 ls1 ws1">6cuillerées à soupe</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   5<span class="_ _3"> </span>06/02/2018   16:22</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf6" class="pf w0 h0" data-page-no="6"><div class="pc pc6 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg6.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   6<span class="_ _3"> </span>06/02/2018   16:22</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf7" class="pf w0 h0" data-page-no="7"><div class="pc pc7 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg7.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">2</div><div class="t m0 x18 h5 y4 ff2 fs2 fc0 sc0 lsa ws9">CA<span class="_ _4"></span>VI<span class="_ _0"></span>AR DE C<span class="_ _5"></span>OU<span class="_ _2"></span>RGE<span class="_ _2"></span>T<span class="_ _6"></span>TE</div><div class="t m0 xb h6 y21 ff3 fs0 fc0 sc0 ls1 ws1">courgettes grillées</div><div class="t m0 x19 h6 y22 ff4 fs0 fc0 sc0 ls1 ws1">surgelées</div><div class="t m0 x6 h6 y23 ff4 fs0 fc0 sc0 ls1 ws1">500g</div><div class="t m0 x4 h6 y24 ff3 fs0 fc0 sc0 ls1 ws1">ail</div><div class="t m0 x1a h6 y25 ff4 fs0 fc0 sc0 ls1 ws1">x ½ gousse</div><div class="t m0 x1b h6 y26 ff3 fs0 fc0 sc0 ls1 ws1">thym frais</div><div class="t m0 x1c h6 y27 ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à café</div><div class="t m0 x1d h6 y28 ff3 fs0 fc0 sc0 ls1 ws1">piment d’Espelette</div><div class="t m0 x1e h6 y29 ff4 fs0 fc0 sc0 ls1 ws1">1 pincée</div><div class="t m0 x1f h6 y28 ff3 fs0 fc0 sc0 ls1 ws1">cumin en poudre</div><div class="t m0 x1f h6 y29 ff4 fs0 fc0 sc0 ls1 ws1">½cuillerée à café</div><div class="t m0 x20 h6 y24 ff3 fs0 fc0 sc0 ls1 ws1">huile d’olive</div><div class="t m0 x21 h6 y25 ff4 fs0 fc0 sc0 ls1 ws1">3cuillerées à soupe</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls4 ws2">C<span class="_ _0"></span>uire l’<span class="_ _5"></span>ail<span class="_ _0"></span> pelé et dégermé<span class="_ _0"></span> </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">dans le bol avec l<span class="_ _2"></span>es cour<span class="_ _0"></span>get<span class="_ _2"></span>tes, </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">1cuillerée à soupe d<span class="_ _2"></span>’huile </div><div class="t m0 xd h7 y2b ff3 fs3 fc0 sc0 ls3 ws1">d’<span class="_ _5"></span>olive et le thym<span class="_ _0"></span>, 7mi<span class="_ _2"></span>nutes </div><div class="t m0 xd h7 y2c ff3 fs3 fc0 sc0 ls3 ws1">à 100°<span class="_ _0"></span>C, </div><div class="t m1 x22 h8 y2d ff3 fs4 fc0 sc0 lsb ws1">vit<span class="_ _0"></span>. 1 </div><div class="t m0 x23 h7 y2d ff3 fs3 fc0 sc0 ls3 ws1">sans le </div><div class="t m0 xd h7 y2e ff3 fs3 fc0 sc0 ls3 ws1">bouchon<span class="_ _0"></span>. Sa<span class="_ _2"></span>ler<span class="_ _5"></span>, poivrer</div><div class="t m0 xc h7 y2f ff3 fs3 fc0 sc0 ls3 ws1">Mixer le tout avec les é<span class="_ _2"></span>pices et le </div><div class="t m0 xd h7 y30 ff3 fs3 fc0 sc0 ls3 ws1">reste d’huile d<span class="_ _2"></span>’<span class="_ _5"></span>olive, 1minute 3<span class="_ _0"></span>0<span class="_ _5"></span>, </div><div class="t m1 xd h8 y31 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 4</div><div class="t m0 x13 h7 y31 ff3 fs3 fc0 sc0 ls3 ws1">. Rectiﬁe<span class="_ _2"></span>r l’<span class="_ _5"></span>assa<span class="_ _2"></span>isonne<span class="_ _2"></span>ment<span class="_ _0"></span>.</div><div class="t m0 xc h7 y15 ff3 fs3 fc0 sc0 ls3 ws1">L<span class="_ _0"></span>ais<span class="_ _2"></span>ser refroidir avant de ser<span class="_ _1"></span>vir </div><div class="t m0 xd h7 y16 ff3 fs3 fc0 sc0 ls3 ws1">avec des pitas par exemp<span class="_ _2"></span>le.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 5minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">15minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 1 bol</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   7<span class="_ _3"> </span>06/02/2018   16:22</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf8" class="pf w0 h0" data-page-no="8"><div class="pc pc8 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg8.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   8<span class="_ _3"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf9" class="pf w0 h0" data-page-no="9"><div class="pc pc9 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg9.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">3</div><div class="t m0 x1a h5 y4 ff2 fs2 fc0 sc0 ls2 ws1">GU<span class="_ _7"></span>A<span class="_ _7"></span>CAM<span class="_ _0"></span>OLE À L<span class="_ _1"></span>A C<span class="_ _7"></span>OR<span class="_ _2"></span>IA<span class="_ _0"></span>NDR<span class="_ _2"></span>E</div><div class="t m0 x24 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">avocats</div><div class="t m0 x25 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">× 2</div><div class="t m0 x1f h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">coriandre fraîche</div><div class="t m0 x1f h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">quelques feuilles</div><div class="t m0 x26 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">pesto de coriandre</div><div class="t m0 x1d h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à soupe</div><div class="t m0 x27 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">épices pour guacamole</div><div class="t m0 x1c h6 ya ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à café</div><div class="t m0 x28 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">jus de citron vert</div><div class="t m0 x29 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">× 1</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Mixer la chair de<span class="_ _2"></span>s avoc<span class="_ _0"></span>ats et </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">le jus de citron ver<span class="_ _2"></span>t dans le </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">bol, 3 sec<span class="_ _0"></span>ondes, </div><div class="t m1 x2a h8 y34 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 6</div><div class="t m0 x11 h7 y34 ff3 fs3 fc0 sc0 lsd wsb">.<span class="_ _1"></span> R<span class="_ _6"></span>a<span class="_ _1"></span>c<span class="_ _6"></span>l<span class="_ _1"></span>e<span class="_ _6"></span>r.</div><div class="t m0 xc h7 y35 ff3 fs3 fc0 sc0 ls3 ws1">Ajouter les épices et le </div><div class="t m0 xd h7 y36 ff3 fs3 fc0 sc0 ls7 wsc">pesto </div><div class="t m0 x2b h7 y37 ff3 fs0 fc0 sc0 ls1 ws1">(recette 12)<span class="fs3 wsd">. M<span class="_ _2"></span>ix<span class="_ _2"></span>er </span></div><div class="t m0 xd h7 y38 ff3 fs3 fc0 sc0 ls1 ws1">3</div><div class="t m0 x2c h7 y10 ff3 fs0 fc0 sc0 ls1 ws1"><span class="fs3 ls7 wsc">sec<span class="_ _0"></span>ondes, </span></div><div class="t m1 x2d h8 y10 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 4</div><div class="t m0 x2a h7 y10 ff3 fs3 fc0 sc0 ls1 wsd">. Re<span class="_ _2"></span>c<span class="_ _2"></span>t<span class="_ _2"></span>iﬁ<span class="_ _2"></span>e<span class="_ _2"></span>r </div><div class="t m0 xd h7 y39 ff3 fs3 fc0 sc0 ls3 ws1">l’<span class="_ _5"></span>assa<span class="_ _2"></span>isonnem<span class="_ _2"></span>ent si nécessaire.</div><div class="t m0 xc h7 y3a ff3 fs3 fc0 sc0 ls3 ws1">Ser<span class="_ _1"></span>vir frais avec que<span class="_ _2"></span>lques </div><div class="t m0 xd h7 y3b ff3 fs3 fc0 sc0 ls7 ws6">feuilles de c<span class="_ _5"></span>oriandre<span class="_ _5"></span>.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 10minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">sans cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 1 bol</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   9<span class="_ _3"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pfa" class="pf w0 h0" data-page-no="a"><div class="pc pca w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bga.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   10<span class="_ _8"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pfb" class="pf w0 h0" data-page-no="b"><div class="pc pcb w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bgb.png"/><div class="t m0 x2e h3 y3c ff2 fs0 fc0 sc0 ls0 ws0">apéritif</div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">4</div><div class="t m0 x2f h5 y4 ff2 fs2 fc0 sc0 ls2 ws1">DIP DE H<span class="_ _5"></span>ARIC<span class="_ _7"></span>O<span class="_ _5"></span>T VERT</div><div class="t m0 x30 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">haricots verts</div><div class="t m0 x6 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">350g</div><div class="t m0 x5 h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">gomasio</div><div class="t m0 xb h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à soupe</div><div class="t m0 x31 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">ail</div><div class="t m0 x32 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">× 1 gousse</div><div class="t m0 x9 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">fromage frais</div><div class="t m0 x33 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">150g</div><div class="t m0 x19 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">persil plat</div><div class="t m0 x30 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">× ½ bouquet</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Met<span class="_ _2"></span>tre 5<span class="_ _0"></span>0<span class="_ _2"></span>0g d’<span class="_ _5"></span>eau da<span class="_ _2"></span>ns le </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">bol. C<span class="_ _0"></span>uire les har<span class="_ _2"></span>ic<span class="_ _0"></span>ots et l’<span class="_ _5"></span>ail </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">dans le pani<span class="_ _2"></span>er<span class="_ _7"></span>, 1<span class="_ _0"></span>5minutes e<span class="_ _2"></span>n </div><div class="t m1 xd h8 y3d ff3 fs4 fc0 sc0 ls5 ws3">mode v<span class="_ _0"></span>apeur</div><div class="t m0 xe h7 y3d ff3 fs3 fc0 sc0 ls3 ws4">, </div><div class="t m1 xf h8 y3d ff3 fs4 fc0 sc0 ls6 ws5">vit<span class="_ _0"></span>. mini</div><div class="t m0 x10 h7 y3d ff3 fs3 fc0 sc0 lse wse">. R<span class="_ _2"></span>i<span class="_ _2"></span>n<span class="_ _2"></span>ce<span class="_ _2"></span>r<span class="_ _2"></span> </div><div class="t m0 xd h7 y3e ff3 fs3 fc0 sc0 ls3 ws1">à l’<span class="_ _5"></span>eau f<span class="_ _2"></span>roide et égout<span class="_ _2"></span>ter<span class="_ _7"></span>.</div><div class="t m0 xc h7 y10 ff3 fs3 fc0 sc0 lsf wsf">Mixer<span class="_ _0"></span> les haric<span class="_ _5"></span>ots<span class="_ _0"></span>, l’<span class="_ _7"></span>ail, le<span class="_ _0"></span> persil </div><div class="t m0 xd h7 y39 ff3 fs3 fc0 sc0 ls3 ws1">et la moitié du fromage da<span class="_ _2"></span>ns </div><div class="t m0 xd h7 y3f ff3 fs3 fc0 sc0 ls3 ws1">le bol, 1minute 30<span class="_ _7"></span>, </div><div class="t m1 x34 h8 y40 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 5</div><div class="t m0 x35 h7 y40 ff3 fs3 fc0 sc0 ls1 ws1">.</div><div class="t m0 xc h7 y41 ff3 fs3 fc0 sc0 ls3 ws1">Ajouter le reste de f<span class="_ _2"></span>romage<span class="_ _0"></span>, </div><div class="t m0 xd h7 y42 ff3 fs3 fc0 sc0 ls3 ws1">assaison<span class="_ _2"></span>ner et mixer </div><div class="t m0 xd h7 y43 ff3 fs3 fc0 sc0 ls3 ws1">1<span class="_ _5"></span>5 se<span class="_ _2"></span>condes, </div><div class="t m1 x36 h8 y44 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 5</div><div class="t m0 x37 h7 y44 ff3 fs3 fc0 sc0 ls1 ws1">.</div><div class="t m0 xc h7 y17 ff3 fs3 fc0 sc0 ls3 ws1">Réser<span class="_ _1"></span>ver au frais 1<span class="fs0 ls1"></span><span class="ls7 wsc">heur<span class="_ _0"></span>e </span></div><div class="t m0 xd h7 y18 ff3 fs3 fc0 sc0 ls3 ws1">avant de ser<span class="_ _1"></span>vir saupoudré </div><div class="t m0 xd h7 y45 ff3 fs3 fc0 sc0 ls3 ws1">de gomasio.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 5minutes</div><div class="t m0 x13 h3 y46 ff2 fs0 fc0 sc0 ls0 ws1">1 heure de r<span class="_ _5"></span>epos</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">15minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 1 bol</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   11<span class="_ _8"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pfc" class="pf w0 h0" data-page-no="c"><div class="pc pcc w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bgc.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   12<span class="_ _8"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pfd" class="pf w0 h0" data-page-no="d"><div class="pc pcd w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bgd.png"/><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">5</div><div class="t m0 x38 h5 y4 ff2 fs2 fc0 sc0 ls10 ws10">BRUSC<span class="_ _0"></span>H<span class="_ _2"></span>E<span class="_ _2"></span>T<span class="_ _6"></span>T<span class="_ _9"></span>AS DE<span class="_ _2"></span> FÈVES</div><div class="t m0 x39 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">fèves surgelées</div><div class="t m0 x6 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">450g</div><div class="t m0 x1a h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">huile d’olive</div><div class="t m0 x3a h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">5cuillerées à soupe</div><div class="t m0 x31 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">ail</div><div class="t m0 x32 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">× 1 gousse</div><div class="t m0 x1e h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">menthe</div><div class="t m0 x3b h6 ya ff4 fs0 fc0 sc0 ls1 ws1">× 1 poignée de feuilles</div><div class="t m0 x28 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">yaourt de brebis</div><div class="t m0 x29 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">× 1</div><div class="t m0 x16 h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">pain de campagne</div><div class="t m0 x7 h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">× 6 tranches</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Met<span class="_ _2"></span>tre 5<span class="_ _0"></span>0<span class="_ _2"></span>0g d’<span class="_ _5"></span>eau da<span class="_ _2"></span>ns le </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">bol. C<span class="_ _0"></span>uire les fèves et l’<span class="_ _5"></span>ail </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">pelé et dé<span class="_ _2"></span>ger<span class="_ _2"></span>mé dans le </div><div class="t m0 xd h7 y2b ff3 fs3 fc0 sc0 ls3 ws1">panier<span class="_ _5"></span>, 1<span class="_ _5"></span>5mi<span class="_ _2"></span>nutes en </div><div class="t m1 x10 h8 y3d ff3 fs4 fc0 sc0 lsb ws11">mode </div><div class="t m1 xd h8 y3e ff3 fs4 fc0 sc0 ls5 ws3">vapeur<span class="_ _4"></span>, vit<span class="_ _0"></span>. mini</div><div class="t m0 x3c h7 y2d ff3 fs3 fc0 sc0 ls3 ws1">. Les rincer à </div><div class="t m0 xd h7 y2e ff3 fs3 fc0 sc0 ls3 ws1">l’<span class="_ _5"></span>eau f<span class="_ _2"></span>roide et les égout<span class="_ _1"></span>ter<span class="_ _7"></span>.</div><div class="t m0 xc h7 y2f ff3 fs3 fc0 sc0 ls3 ws1">Mixer la moitié d<span class="_ _2"></span>es fèves </div><div class="t m0 xd h7 y30 ff3 fs3 fc0 sc0 ls3 ws1">dans le bol avec l<span class="_ _2"></span>e yaour<span class="_ _2"></span>t<span class="_ _0"></span>, </div><div class="t m0 xd h7 y47 ff3 fs3 fc0 sc0 ls3 ws1">la menthe et l<span class="_ _2"></span>’huile d’<span class="_ _5"></span>olive, </div><div class="t m0 xd h7 y48 ff3 fs3 fc0 sc0 ls3 ws4">1minute, </div><div class="t m1 x22 h8 y49 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 5</div><div class="t m0 x3d h7 y49 ff3 fs3 fc0 sc0 ls3 ws1">. Sale<span class="_ _2"></span>r<span class="_ _7"></span>, poivrer<span class="_ _7"></span>.</div><div class="t m0 xc h7 y44 ff3 fs3 fc0 sc0 ls3 ws1">Faire grille<span class="_ _2"></span>r le pai<span class="_ _2"></span>n. T<span class="_ _7"></span>ar<span class="_ _1"></span>tiner de </div><div class="t m0 xd h7 y4a ff3 fs3 fc0 sc0 ls3 ws1">crème de fèv<span class="_ _0"></span>e puis ajoute<span class="_ _2"></span>r les </div><div class="t m0 xd h7 y4b ff3 fs3 fc0 sc0 ls3 ws1">fèves entières<span class="_ _0"></span>. Sa<span class="_ _2"></span>ler<span class="_ _5"></span>, poivrer et </div><div class="t m0 xd h7 y4c ff3 fs3 fc0 sc0 ls3 ws1">arroser d’<span class="_ _0"></span>un ﬁl<span class="_ _2"></span>et d’huile d<span class="_ _2"></span>’<span class="_ _7"></span>o<span class="_ _2"></span>live.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 5minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">10minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 6 personnes</div><div class="t m0 x2e h3 y3c ff2 fs0 fc0 sc0 ls0 ws0">apéritif</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   13<span class="_ _8"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pfe" class="pf w0 h0" data-page-no="e"><div class="pc pce w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bge.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   14<span class="_ _8"> </span>06/02/2018   16:23</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pff" class="pf w0 h0" data-page-no="f"><div class="pc pcf w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bgf.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">6</div><div class="t m0 x3e h5 y4 ff2 fs2 fc0 sc0 ls11 ws12">M<span class="_ _2"></span>A<span class="_ _4"></span>Y<span class="_ _5"></span>O<span class="_ _2"></span> HAR<span class="_ _1"></span>IC<span class="_ _5"></span>O<span class="_ _0"></span>TS<span class="_ _2"></span> B<span class="_ _2"></span>L<span class="_ _6"></span>AN<span class="_ _2"></span>C<span class="_ _2"></span>S</div><div class="t m0 x3f h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">haricots blancs</div><div class="t m0 x28 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">frais ou surgelés</div><div class="t m0 x40 h6 y4d ff4 fs0 fc0 sc0 ls1 ws1"> 200g</div><div class="t m0 x41 h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">huile de tournesol</div><div class="t m0 x3a h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">7cuillerées à soupe</div><div class="t m0 x42 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">lait</div><div class="t m0 x33 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">100g</div><div class="t m0 x7 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">jus de citron</div><div class="t m0 x1c h6 ya ff4 fs0 fc0 sc0 ls1 ws1">1cuillerée à café</div><div class="t m0 x19 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">moutarde</div><div class="t m0 x41 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">5cuillerées à café</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 lsf wsf">Plac<span class="_ _5"></span>er les haric<span class="_ _5"></span>ots d<span class="_ _0"></span>ans le<span class="_ _0"></span> </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">panier d<span class="_ _2"></span>u bol et rec<span class="_ _0"></span>ouvrir d<span class="_ _2"></span>’<span class="_ _5"></span>eau.<span class="_ _0"></span> </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">Cuir<span class="_ _0"></span>e 30minutes à 100°<span class="_ _0"></span>C, </div><div class="t m1 x43 h8 y34 ff3 fs4 fc0 sc0 lsb ws11">vit<span class="_ _0"></span>.1</div><div class="t m0 x44 h7 y34 ff3 fs3 fc0 sc0 ls1 ws1">. </div><div class="t m0 xd h7 y4e ff3 fs3 fc0 sc0 ls3 ws1">Égo<span class="_ _0"></span>ut<span class="_ _1"></span>ter soigneuseme<span class="_ _2"></span>nt<span class="_ _0"></span>.</div><div class="t m0 xc h7 y37 ff3 fs3 fc0 sc0 ls3 ws1">Les mixer dans le bol avec </div><div class="t m0 xd h7 y38 ff3 fs3 fc0 sc0 ls3 ws1">le lait, 3minutes, </div><div class="t m1 x45 h8 y10 ff3 fs4 fc0 sc0 lsb ws11">vit<span class="_ _0"></span>.3<span class="_ _0"></span>,5<span class="_ _5"></span>,</div><div class="t m0 x46 h7 y10 ff3 fs3 fc0 sc0 ls1 ws1"> </div><div class="t m0 xd h7 y39 ff3 fs3 fc0 sc0 ls3 ws1">en raclant 3 f<span class="_ _0"></span>ois.</div><div class="t m0 xc h7 y3a ff3 fs3 fc0 sc0 ls3 ws1">Ajouter la moutarde<span class="_ _0"></span>, le jus de </div><div class="t m0 xd h7 y3b ff3 fs3 fc0 sc0 ls3 ws1">citr<span class="_ _0"></span>on, saler et poiv<span class="_ _2"></span>rer<span class="_ _7"></span>. Mixer </div><div class="t m0 xd h7 y4f ff3 fs3 fc0 sc0 ls3 ws4">1minute, </div><div class="t m1 x22 h8 y15 ff3 fs4 fc0 sc0 lsb ws11">vit<span class="_ _0"></span>.4 </div><div class="t m0 x47 h7 y15 ff3 fs3 fc0 sc0 ls8 ws7">en ajou<span class="_ _2"></span>tant </div><div class="t m0 xd h7 y16 ff3 fs3 fc0 sc0 ls3 ws1">l’huile progressiveme<span class="_ _2"></span>nt<span class="_ _0"></span>. </div><div class="t m0 xd h7 y50 ff3 fs3 fc0 sc0 ls3 ws1">Réser<span class="_ _1"></span>ver au frais 1heure<span class="_ _0"></span>.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 10minutes</div><div class="t m0 x13 h3 y46 ff2 fs0 fc0 sc0 ls0 ws1">1 heure de r<span class="_ _5"></span>epos</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">30minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 1 bol</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   15<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf10" class="pf w0 h0" data-page-no="10"><div class="pc pc10 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg10.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   16<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf11" class="pf w0 h0" data-page-no="11"><div class="pc pc11 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg11.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x48 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">7</div><div class="t m0 x49 h5 y4 ff2 fs2 fc0 sc0 ls12 ws13">CR<span class="_ _1"></span>ÈM<span class="_ _2"></span>E<span class="_ _1"></span> D’<span class="_ _4"></span>AR<span class="_ _2"></span>T<span class="_ _1"></span>ICH<span class="_ _2"></span>AUT</div><div class="t m0 x4a ha y51 ff6 fs0 fc0 sc0 ls1 ws1"></div><div class="t m0 x4b h6 y52 ff4 fs0 fc0 sc0 ls1 ws1">surgelés</div><div class="t m0 x40 h6 y53 ff4 fs0 fc0 sc0 ls1 ws1"> 450g</div><div class="t m0 x3f h6 y54 ff3 fs0 fc0 sc0 ls1 ws1">pignons de pin</div><div class="t m0 x4c h6 y55 ff4 fs0 fc0 sc0 ls1 ws1">20 g</div><div class="t m0 x31 h6 y56 ff3 fs0 fc0 sc0 ls1 ws1">ail</div><div class="t m0 x20 h6 y57 ff4 fs0 fc0 sc0 ls1 ws1">× ½ gousse</div><div class="t m0 x32 h6 y58 ff3 fs0 fc0 sc0 ls1 ws1">parmesan</div><div class="t m0 x4d h6 y59 ff4 fs0 fc0 sc0 ls1 ws1">50g</div><div class="t m0 x1a h6 y58 ff3 fs0 fc0 sc0 ls1 ws1">basilic frais</div><div class="t m0 x1a h6 y59 ff4 fs0 fc0 sc0 ls1 ws1">× 15 feuilles</div><div class="t m0 x20 h6 y54 ff3 fs0 fc0 sc0 ls1 ws1">huile d’olive</div><div class="t m0 x21 h6 y55 ff4 fs0 fc0 sc0 ls1 ws1">5cuillerées à soupe</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Met<span class="_ _2"></span>tre 5<span class="_ _0"></span>0<span class="_ _2"></span>0g d’<span class="_ _5"></span>eau da<span class="_ _2"></span>ns le bol. </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls8 ws7">Placer les cœurs d’<span class="_ _5"></span>ar<span class="_ _1"></span>tichauts </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws1">et l’<span class="_ _5"></span>ail dans l<span class="_ _2"></span>e panie<span class="_ _2"></span>r et </div><div class="t m0 xd h7 y2b ff3 fs3 fc0 sc0 ls3 ws1">cuire 1<span class="_ _0"></span>0minutes e<span class="_ _2"></span>n </div><div class="t m1 x4e h8 y3d ff3 fs4 fc0 sc0 lsb ws11">mode </div><div class="t m1 xd h8 y3e ff3 fs4 fc0 sc0 ls5 ws14">vapeur</div><div class="t m0 x4f h7 y2d ff3 fs3 fc0 sc0 ls3 ws4">, </div><div class="t m1 x50 h8 y2d ff3 fs4 fc0 sc0 ls6 ws5">vit<span class="_ _0"></span>. mini</div><div class="t m0 x3c h7 y2d ff3 fs3 fc0 sc0 lsd wsb">.<span class="_ _1"></span> É<span class="_ _1"></span>g<span class="_ _6"></span>o<span class="_ _6"></span>u<span class="_ _1"></span>t<span class="_ _a"></span>t<span class="_ _1"></span>e<span class="_ _6"></span>r.</div><div class="t m0 xc h7 y10 ff3 fs3 fc0 sc0 ls3 ws1">Dans le bol vid<span class="_ _2"></span>e, mixer le </div><div class="t m0 xd h7 y39 ff3 fs3 fc0 sc0 ls3 ws1">parme<span class="_ _2"></span>san 10 sec<span class="_ _0"></span>onde<span class="_ _2"></span>s, </div><div class="t m1 x46 h8 y2f ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 8</div><div class="t m0 x51 h7 y2f ff3 fs3 fc0 sc0 ls1 ws1">. </div><div class="t m0 xd h7 y30 ff3 fs3 fc0 sc0 ls8 ws7">Ajouter le<span class="_ _2"></span>s ar<span class="_ _1"></span>tichauts et l’<span class="_ _5"></span>ail </div><div class="t m0 xd h7 y47 ff3 fs3 fc0 sc0 ls3 ws1">cuits<span class="_ _0"></span>, le ba<span class="_ _2"></span>silic et le<span class="_ _2"></span>s pignons. </div><div class="t m0 xd h7 y48 ff3 fs3 fc0 sc0 ls3 ws1">Assa<span class="_ _2"></span>isonne<span class="_ _2"></span>r<span class="_ _7"></span>. Mixer 1<span class="_ _0"></span>5 secondes, </div><div class="t m1 xd h8 y5a ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 7</div><div class="t m0 x13 h7 y5a ff3 fs3 fc0 sc0 ls3 ws1">, rac<span class="_ _0"></span>le<span class="_ _2"></span>r puis ajouter l<span class="_ _2"></span>’huile </div><div class="t m0 xd h7 y5b ff3 fs3 fc0 sc0 ls3 ws1">et mixer 1minute 30<span class="_ _5"></span>, </div><div class="t m1 x11 h8 y5c ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 5</div><div class="t m0 x52 h7 y5c ff3 fs3 fc0 sc0 ls1 ws1">.</div><div class="t m0 xc h7 y5d ff3 fs3 fc0 sc0 ls3 ws1">Ser<span class="_ _1"></span>vir en di<span class="_ _2"></span>p ou dans des pâtes </div><div class="t m0 xd h7 y5e ff3 fs3 fc0 sc0 ls3 ws1">avec du jambon de Par<span class="_ _2"></span>me.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 5minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">10minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 6 personnes</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   17<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf12" class="pf w0 h0" data-page-no="12"><div class="pc pc12 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg12.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   18<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf13" class="pf w0 h0" data-page-no="13"><div class="pc pc13 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg13.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">8</div><div class="t m0 x5 h5 y4 ff2 fs2 fc0 sc0 ls13 ws15">GOUGÈR<span class="_ _2"></span>ES DE P<span class="_ _4"></span>A<span class="_ _9"></span>T<span class="_ _4"></span>A<span class="_ _9"></span>TE D<span class="_ _0"></span>OUCE</div><div class="t m0 x53 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">purée patates douces</div><div class="t m0 x1f h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">200g (recette 29)</div><div class="t m0 x40 h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">comté</div><div class="t m0 x54 h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">150g</div><div class="t m0 x55 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">beurre</div><div class="t m0 x4d h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">70g</div><div class="t m0 x33 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">œufs</div><div class="t m0 x42 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">× 2</div><div class="t m0 x6 h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">farine</div><div class="t m0 x54 h6 ya ff4 fs0 fc0 sc0 ls1 ws1">120g</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls8 ws7">Préchauf<span class="_ _2"></span>fe<span class="_ _2"></span>r le four à </div><div class="t m0 xd h7 yc ff3 fs3 fc0 sc0 ls3 ws1">2<span class="_ _0"></span>00°C. Mixer le comt<span class="_ _0"></span>é </div><div class="t m0 xd h7 y2a ff3 fs3 fc0 sc0 ls3 ws4">1<span class="_ _5"></span>5se<span class="_ _2"></span>condes, </div><div class="t m1 x36 h8 y34 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 7</div><div class="t m0 x45 h7 y34 ff3 fs3 fc0 sc0 ls14 ws16">. R<span class="_ _0"></span>éser<span class="_ _2"></span>ver<span class="_ _7"></span>.</div><div class="t m0 xc h7 y35 ff3 fs3 fc0 sc0 ls3 ws1">Cuir<span class="_ _0"></span>e le b<span class="_ _2"></span>eurre, 1 pinc<span class="_ _0"></span>ée </div><div class="t m0 xd h7 y36 ff3 fs3 fc0 sc0 ls3 ws1">de sel, du poivre et 1<span class="_ _0"></span>00g </div><div class="t m0 xd h7 y5f ff3 fs3 fc0 sc0 ls3 ws1">d’<span class="_ _5"></span>eau 4m<span class="_ _2"></span>inutes 30<span class="_ _5"></span>, 100°<span class="_ _0"></span>C, </div><div class="t m1 xd h8 y2f ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 1</div><div class="t m0 x56 h7 y2f ff3 fs3 fc0 sc0 ls3 ws1">. Ajouter la farine et </div><div class="t m0 xd h7 y30 ff3 fs3 fc0 sc0 ls3 ws1">mélang<span class="_ _2"></span>er 2minu<span class="_ _2"></span>tes, 1<span class="_ _0"></span>00°C </div><div class="t m1 xd h8 y31 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 3</div><div class="t m0 x13 h7 y31 ff3 fs3 fc0 sc0 ls3 ws1">. L<span class="_ _0"></span>ais<span class="_ _2"></span>ser ti<span class="_ _2"></span>édir<span class="_ _7"></span>.</div><div class="t m0 xc h7 y15 ff3 fs3 fc0 sc0 ls4 ws17">Mélanger </div><div class="t m1 x57 h8 y15 ff3 fs4 fc0 sc0 lsb ws1">vit<span class="_ _0"></span>. 5 </div><div class="t m0 x58 h7 y15 ff3 fs3 fc0 sc0 ls8 ws7">et ajouter </div><div class="t m0 xd h7 y16 ff3 fs3 fc0 sc0 ls3 ws1">les œuf<span class="_ _2"></span>s un à un. Mélang<span class="_ _2"></span>er </div><div class="t m0 xd h7 y50 ff3 fs3 fc0 sc0 ls3 ws1">40secondes après le derni<span class="_ _2"></span>er </div><div class="t m0 xd h7 y60 ff3 fs3 fc0 sc0 ls3 ws1">œuf<span class="_ _0"></span>. Ajouter le comté<span class="_ _0"></span>, la purée.<span class="_ _0"></span> </div><div class="t m0 xd h7 y61 ff3 fs3 fc0 sc0 ls4 ws2">Mélanger 4<span class="_ _0"></span>0 sec<span class="_ _0"></span>ondes,<span class="_ _0"></span> </div><div class="t m1 x59 h8 y62 ff3 fs4 fc0 sc0 lsb ws11">vit<span class="_ _0"></span>.2<span class="_ _0"></span>.</div><div class="t m0 xc h7 y63 ff3 fs3 fc0 sc0 ls3 ws1">Dépose<span class="_ _2"></span>r des tas de pâte </div><div class="t m0 xd h7 y64 ff3 fs3 fc0 sc0 ls7 ws6">sur une plaqu<span class="_ _0"></span>e et enf<span class="_ _0"></span>ourner </div><div class="t m0 xd h7 y65 ff3 fs3 fc0 sc0 ls3 ws1">30 à 3<span class="_ _5"></span>5minutes.</div><div class="t m0 x13 h3 y19 ff2 fs0 fc0 sc0 ls0 ws1">prêt en 15minutes</div><div class="t m0 x13 h3 y1a ff2 fs0 fc0 sc0 ls0 ws1">30minutes de cuisson</div><div class="t m0 x13 h3 y1b ff2 fs0 fc0 sc0 ls0 ws1">pour 20 gougères</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   19<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf14" class="pf w0 h0" data-page-no="14"><div class="pc pc14 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg14.png"/><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   20<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf15" class="pf w0 h0" data-page-no="15"><div class="pc pc15 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg15.png"/><div class="c x1 y1 w2 h2"><div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">apéritif</div></div><div class="t m0 x12 h4 y3 ff2 fs1 fc1 sc0 ls1 ws1">9</div><div class="t m0 x5a h5 y4 ff2 fs2 fc0 sc0 ls2 ws1">S<span class="_ _0"></span>ABLÉ<span class="_ _0"></span>S OLIV<span class="_ _0"></span>E<span class="_ _0"></span>-<span class="_ _9"></span>T<span class="_ _7"></span>O<span class="_ _0"></span>MA<span class="_ _9"></span>TE</div><div class="t m0 x5b h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">olives noires</div><div class="t m0 x41 h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">× 12 dénoyautées</div><div class="t m0 xb h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">piment d’Espelette</div><div class="t m0 x19 h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">2 pincées</div><div class="t m0 x32 h6 y5 ff3 fs0 fc0 sc0 ls1 ws1">parmesan</div><div class="t m0 x4d h6 y6 ff4 fs0 fc0 sc0 ls1 ws1">80g</div><div class="t m0 x5c h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">farine</div><div class="t m0 x4d h6 ya ff4 fs0 fc0 sc0 ls1 ws1">110g</div><div class="t m0 x5d h6 y9 ff3 fs0 fc0 sc0 ls1 ws1">beurre froid en dés</div><div class="t m0 x4c h6 ya ff4 fs0 fc0 sc0 ls1 ws1">80g</div><div class="t m0 x5e h6 y32 ff3 fs0 fc0 sc0 ls1 ws1">tomates cerise</div><div class="t m0 x4d h6 y33 ff4 fs0 fc0 sc0 ls1 ws1">× 10</div><div class="t m0 xc h7 yb ff3 fs3 fc0 sc0 ls3 ws1">Mixer le par<span class="_ _2"></span>mesa<span class="_ _2"></span>n 5 secondes,<span class="_ _0"></span> </div><div class="t m1 xd h8 y66 ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 8.</div><div class="t m0 x5f h7 y66 ff3 fs3 fc0 sc0 ls8 ws7"> Ajouter le b<span class="_ _2"></span>eurre, la </div><div class="t m0 xd h7 y67 ff3 fs3 fc0 sc0 ls3 ws1">farine, le piment et les ol<span class="_ _2"></span>ives et </div><div class="t m0 xd h7 y68 ff3 fs3 fc0 sc0 ls3 ws1">mixer 1<span class="_ _5"></span>5 s<span class="_ _2"></span>econdes, </div><div class="t m1 x60 h8 y3d ff3 fs4 fc0 sc0 lsc wsa">v<span class="_ _2"></span>i<span class="_ _1"></span>t.<span class="_ _2"></span> 5</div><div class="t m0 x59 h7 y3d ff3 fs3 fc0 sc0 ls1 wsd"> pou<span class="_ _2"></span>r </div><div class="t m0 xd h7 y3e ff3 fs3 fc0 sc0 ls3 ws1">obtenir une tex<span class="_ _2"></span>ture sablé<span class="_ _2"></span>e.</div><div class="t m0 xc h7 y10 ff3 fs3 fc0 sc0 ls3 ws1">Dépose<span class="_ _2"></span>r la pâte sur une feuil<span class="_ _2"></span>le </div><div class="t m0 xd h7 y39 ff3 fs3 fc0 sc0 ls3 ws1">de papier cuis<span class="_ _2"></span>son et former un </div><div class="t m0 xd h7 y3f ff3 fs3 fc0 sc0 ls3 ws1">boudin ser<span class="_ _2"></span>ré de 2<span class="_ _0"></span>0cm environ<span class="_ _0"></span>. </div><div class="t m0 xd h7 y69 ff3 fs3 fc0 sc0 ls3 ws1">Réser<span class="_ _1"></span>ver au frais 1 heure<span class="_ _0"></span>.</div><div class="t m0 xc h7 y15 ff3 fs3 fc0 sc0 ls3 ws1">Préchauf<span class="_ _2"></span>fer le four à 18<span class="_ _0"></span>0°C.<span class="_ _0"></span> </div><div class="t m0 xd h7 y16 ff3 fs3 fc0 sc0 ls3 ws1">Couper des tranches de pâte </div><div class="t m0 xd h7 y50 ff3 fs3 fc0 sc0 ls3 ws1">de 1cm, les disposer sur </div><div class="t m0 xd h7 y60 ff3 fs3 fc0 sc0 ls3 ws1">une plaque g<span class="_ _2"></span>arnie d<span class="_ _2"></span>e papier </div><div class="t m0 xd h7 y61 ff3 fs3 fc0 sc0 ls3 ws1">cuisson et enfonc<span class="_ _0"></span>er d<span class="_ _2"></span>es </div><div class="t m0 xd h7 y6a ff3 fs3 fc0 sc0 ls15 ws18">demi-t<span class="_ _0"></span>omates dans c<span class="_ _0"></span>haque </div><div class="t m0 xd h7 y6b ff3 fs3 fc0 sc0 ls3 ws1">sablé. Cuir<span class="_ _0"></span>e 20minutes<span class="_ _0"></span>.</div><div class="t m0 x13 h3 y6c ff2 fs0 fc0 sc0 ls0 ws1">prêt en 10minutes<span class="_ _0"></span> <span class="ls1"> </span></div><div class="t m0 x13 h3 y6d ff2 fs0 fc0 sc0 ls0 ws1">1 heure de r<span class="_ _5"></span>epos</div><div class="t m0 x13 h3 y6e ff2 fs0 fc0 sc0 ls0 ws1">20minutes de cuisson</div><div class="t m0 x13 h3 y6f ff2 fs0 fc0 sc0 ls0 ws1">pour 20 sablés</div><div class="t m0 x17 h9 y20 ff5 fs5 fc2 sc0 ls1 ws1">SF_Thermo.indb   21<span class="_ _8"> </span>06/02/2018   16:24</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+<img alt="" src="pdf2htmlEX-64x64.png"/>
+</div>
+</body>
+</html>
