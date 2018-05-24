@@ -37,8 +37,8 @@ let entries =
         let folder r idx i = 
             let recettes = 
                 match idx |> Map.tryFind i with
-                | Some recettes -> r.Titre :: recettes
-                | None -> [r.Titre]
+                | Some recettes -> r :: recettes
+                | None -> [r]
             idx |> Map.add i recettes
         r.Ingredients |> List.fold (folder r) idx
     recettes 
